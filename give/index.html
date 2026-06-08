@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Covenant of Education — The Teen Mental Health Crisis Has a Door. Self-Acceptance.</title>
+<meta name="description" content="A generation of teens is anxious, isolated, and unsure of their future. The 7 Teachings — Izzy Kiver's mentorship framework — helps teens find self-acceptance, build confidence and courage, and go after the lives waiting for them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://www.pledge.to/embed/widget.js" async="async"></script>
+<style>
+:root {
+  --navy: #1B2A4A;
+  --gold: #C9A84C;
+  --cream: #FBF8F1;
+  --warm-white: #FFFFFF;
+  --soft-blue: #4285F4;
+  --text-dark: #2C3E50;
+  --text-mid: #5A6B7D;
+  --text-light: #8A95A5;
+  --coral: #E8734A;
+  --sage: #6DAE8B;
+  --lavender: #F0EBF8;
+  --peach: #FEF0E8;
+  --light-bg: #F7F9FC;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-dark);
+  background: var(--warm-white);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ──────── NAV ──────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(27,42,74,0.06);
+  transition: box-shadow 0.3s;
+}
+.nav.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,0.06); }
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 24px;
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; font-weight: 700; color: var(--navy);
+  text-decoration: none; letter-spacing: -0.5px;
+}
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a {
+  font-size: 14px; font-weight: 500; color: var(--text-mid);
+  text-decoration: none; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--navy); }
+.nav-links a.btn-donate { color: white; }
+.nav-links a.btn-donate:hover { color: white; }
+.btn-donate {
+  background: var(--coral); color: white;
+  padding: 10px 24px; border-radius: 100px;
+  font-weight: 600; font-size: 14px; text-decoration: none;
+  transition: all 0.25s; border: none; cursor: pointer;
+  box-shadow: 0 2px 12px rgba(232,115,74,0.25);
+}
+.btn-donate:hover { background: #D4622F; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(232,115,74,0.35); }
+.mobile-toggle { display: none; background: none; border: none; cursor: pointer; }
+
+/* ──────── HERO ──────── */
+.hero {
+  padding: 140px 24px 80px;
+  background: linear-gradient(168deg, var(--cream) 0%, var(--warm-white) 50%, var(--peach) 100%);
+  text-align: center; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero-label {
+  display: inline-block; font-size: 12px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--gold);
+  margin-bottom: 20px; padding: 6px 16px;
+  background: rgba(201,168,76,0.1); border-radius: 100px;
+  animation: fadeUp 0.6s ease-out;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5.5vw, 64px); line-height: 1.15;
+  color: var(--navy); max-width: 840px; margin: 0 auto 24px;
+  animation: fadeUp 0.6s ease-out 0.1s both;
+}
+.hero h1 em { font-style: italic; color: var(--coral); }
+.hero-sub {
+  font-size: clamp(16px, 2vw, 20px); color: var(--text-mid);
+  max-width: 660px; margin: 0 auto 16px; line-height: 1.7;
+  animation: fadeUp 0.6s ease-out 0.2s both;
+}
+.hero-question {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(17px, 2.2vw, 22px); font-style: italic;
+  color: var(--navy); max-width: 700px; margin: 32px auto 40px; line-height: 1.6;
+  animation: fadeUp 0.6s ease-out 0.3s both;
+  padding: 24px 32px; background: rgba(255,255,255,0.7);
+  border-radius: 16px; border-left: 3px solid var(--gold);
+}
+.hero-ctas {
+  display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+  animation: fadeUp 0.6s ease-out 0.4s both;
+}
+.btn-primary {
+  background: var(--navy); color: white; padding: 14px 32px;
+  border-radius: 100px; font-weight: 600; font-size: 16px;
+  text-decoration: none; transition: all 0.25s; border: none; cursor: pointer;
+}
+.btn-primary:hover { background: #243A5E; transform: translateY(-1px); }
+.btn-secondary {
+  background: transparent; color: var(--navy); padding: 14px 32px;
+  border-radius: 100px; font-weight: 600; font-size: 16px;
+  text-decoration: none; border: 2px solid rgba(27,42,74,0.15); transition: all 0.25s;
+}
+.btn-secondary:hover { border-color: var(--navy); }
+.hero-trust {
+  margin-top: 48px; display: flex; gap: 40px; justify-content: center; flex-wrap: wrap;
+  animation: fadeUp 0.6s ease-out 0.5s both;
+}
+.hero-trust span {
+  font-size: 13px; color: var(--text-light); font-weight: 500;
+  display: flex; align-items: center; gap: 6px;
+}
+.hero-trust span::before { content: '✓'; color: var(--sage); font-weight: 700; }
+.hero-call-mockup { margin: 40px auto 32px; max-width: 640px; }
+.hero-session-img {
+  width: 100%; border-radius: 16px;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.1), 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.06); display: block;
+}
+
+/* ──────── PROBLEM ──────── */
+.problem { padding: 100px 24px; background: var(--warm-white); }
+.problem-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+.section-label {
+  font-size: 12px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--coral); margin-bottom: 16px;
+}
+.problem h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 4vw, 48px); color: var(--navy);
+  margin-bottom: 20px; line-height: 1.2;
+}
+.problem > .problem-inner > p {
+  font-size: 18px; color: var(--text-mid); max-width: 720px;
+  margin: 0 auto 56px; line-height: 1.7;
+}
+.stats-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px; margin-bottom: 56px;
+}
+.stat-card {
+  background: var(--light-bg); border-radius: 16px; padding: 28px 24px;
+  text-align: center; transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+.stat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
+.stat-number {
+  font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700;
+  color: var(--coral); line-height: 1; margin-bottom: 8px;
+}
+.stat-label { font-size: 14px; color: var(--text-mid); line-height: 1.5; }
+.stat-source { font-size: 11px; color: var(--text-light); margin-top: 6px; }
+.problem-tagline {
+  font-family: 'Playfair Display', serif; font-size: 22px;
+  color: var(--navy); font-style: italic; max-width: 640px; margin: 0 auto;
+}
+
+/* ──────── THE DOOR (self-acceptance bridge) ──────── */
+.door {
+  padding: 96px 24px;
+  background: linear-gradient(168deg, var(--warm-white) 0%, var(--cream) 100%);
+  text-align: center;
+}
+.door-inner { max-width: 760px; margin: 0 auto; }
+.door h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px);
+  color: var(--navy); line-height: 1.25; margin-bottom: 24px;
+}
+.door h2 em { font-style: italic; color: var(--coral); }
+.door p {
+  font-size: 18px; color: var(--text-mid); line-height: 1.8; margin-bottom: 20px;
+}
+.door-pull {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: clamp(20px, 2.6vw, 26px); color: var(--navy);
+  line-height: 1.5; margin: 36px auto 0; max-width: 600px;
+  padding-top: 28px; border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+/* ──────── SOLUTION ──────── */
+.solution { padding: 100px 24px; background: var(--navy); color: white; position: relative; overflow: hidden; }
+.solution::before {
+  content: ''; position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M30 0v60M0 30h60' stroke='%23ffffff' stroke-width='0.3' opacity='0.04'/%3E%3C/svg%3E");
+}
+.solution-inner { max-width: 1100px; margin: 0 auto; position: relative; }
+.solution-split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; text-align: left; }
+.solution .section-label { color: var(--gold); }
+.solution h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 40px); margin-bottom: 20px; line-height: 1.2; }
+.solution-text { font-size: 17px; line-height: 1.8; color: rgba(255,255,255,0.8); margin-bottom: 32px; }
+.solution-text strong { color: white; font-weight: 600; }
+.outcomes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
+.outcome-item {
+  padding: 14px 16px; background: rgba(255,255,255,0.06); border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center;
+  gap: 10px; text-align: left; font-size: 14px; color: rgba(255,255,255,0.9);
+  transition: background 0.3s;
+}
+.outcome-item:hover { background: rgba(255,255,255,0.1); }
+.outcome-icon {
+  width: 32px; height: 32px; background: rgba(201,168,76,0.2);
+  border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: 16px;
+}
+.solution-image { position: relative; border-radius: 20px; overflow: hidden; }
+.solution-image img { width: 100%; height: 100%; min-height: 480px; object-fit: cover; display: block; border-radius: 20px; }
+.solution-image-caption {
+  position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 20px 20px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  font-size: 14px; color: rgba(255,255,255,0.9); font-style: italic; border-radius: 0 0 20px 20px;
+}
+.solution-cta {
+  display: inline-block; background: var(--gold); color: var(--navy);
+  padding: 16px 36px; border-radius: 100px; font-weight: 700; font-size: 16px;
+  text-decoration: none; transition: all 0.25s;
+}
+.solution-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.3); }
+
+/* ──────── PROOF / CASE STUDIES ──────── */
+.proof { padding: 100px 24px; background: var(--warm-white); }
+.proof-inner { max-width: 880px; margin: 0 auto; text-align: center; }
+.proof h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px);
+  color: var(--navy); margin-bottom: 16px;
+}
+.proof-sub { font-size: 18px; color: var(--text-mid); max-width: 600px; margin: 0 auto 12px; line-height: 1.7; }
+.proof-hint { font-size: 14px; color: var(--text-light); font-style: italic; margin-bottom: 40px; }
+.case-card {
+  background: var(--light-bg); border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 20px; text-align: left; margin-bottom: 20px;
+  overflow: hidden; transition: box-shadow 0.3s, transform 0.3s;
+}
+.case-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.07); }
+.case-head {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 20px; padding: 28px 32px; text-align: left; font-family: inherit;
+}
+.case-head-text { flex: 1; }
+.case-name {
+  font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700;
+  color: var(--navy); margin-bottom: 6px;
+}
+.case-hook { font-size: 16px; color: var(--text-mid); line-height: 1.6; }
+.case-toggle {
+  flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%;
+  background: var(--navy); color: white; display: flex; align-items: center;
+  justify-content: center; font-size: 22px; font-weight: 400; line-height: 1;
+  transition: transform 0.35s, background 0.3s; margin-top: 4px;
+}
+.case-card.open .case-toggle { transform: rotate(45deg); background: var(--coral); }
+.case-body {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+.case-card.open .case-body { max-height: 1400px; }
+.case-body-inner { padding: 0 32px 32px; }
+.case-body-inner p {
+  font-size: 16px; color: var(--text-dark); line-height: 1.8; margin-bottom: 16px;
+}
+.case-quote {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: 19px; color: var(--navy); line-height: 1.6;
+  padding: 20px 24px; background: rgba(201,168,76,0.08);
+  border-left: 3px solid var(--gold); border-radius: 0 12px 12px 0; margin: 24px 0;
+}
+.case-grid {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;
+  margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,0.08);
+}
+.case-grid-item .case-grid-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--coral); margin-bottom: 6px;
+}
+.case-grid-item .case-grid-value { font-size: 14px; color: var(--text-dark); line-height: 1.5; }
+.case-shared {
+  margin-top: 16px; padding: 36px 32px;
+  background: var(--navy); color: white; border-radius: 20px; text-align: center;
+}
+.case-shared h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 16px; }
+.case-shared p { font-size: 17px; color: rgba(255,255,255,0.85); line-height: 1.7; max-width: 560px; margin: 0 auto 12px; }
+.case-shared .case-shared-pull {
+  font-family: 'Playfair Display', serif; font-style: italic; font-size: 22px;
+  color: var(--gold); margin-top: 20px;
+}
+
+/* ──────── TESTIMONIALS ──────── */
+.testimonials { padding: 100px 24px; background: var(--light-bg); }
+.testimonials-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+.testimonials h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); color: var(--navy); margin-bottom: 48px; }
+.testimonial-carousel { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.testimonial-card {
+  background: white; border-radius: 20px; padding: 32px; text-align: left;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.04); transition: transform 0.3s;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+.testimonial-card:hover { transform: translateY(-4px); }
+.testimonial-quote {
+  font-family: 'Playfair Display', serif; font-size: 17px; font-style: italic;
+  color: var(--text-dark); line-height: 1.7; margin-bottom: 20px;
+}
+.testimonial-quote::before { content: '"'; font-size: 48px; color: var(--gold); line-height: 0; display: block; margin-bottom: 8px; }
+.testimonial-author { display: flex; align-items: center; gap: 12px; }
+.testimonial-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--coral));
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-weight: 700; font-size: 16px;
+}
+.testimonial-name { font-weight: 600; font-size: 15px; color: var(--navy); }
+.testimonial-role { font-size: 13px; color: var(--text-light); }
+
+.transformation { margin-top: 56px; max-width: 640px; margin-left: auto; margin-right: auto; text-align: center; }
+.struck-lines { margin-bottom: 36px; }
+.struck-images { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 36px; }
+.struck-images img { width: 100%; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); display: block; }
+.struck-line {
+  font-family: 'DM Sans', sans-serif; font-size: 20px; font-style: italic;
+  color: #b0b0b0; text-decoration: line-through; text-decoration-color: rgba(0,0,0,0.2);
+  line-height: 2.2; transition: opacity 0.6s;
+}
+.struck-result { margin-bottom: 12px; }
+.struck-result-num { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: var(--navy); line-height: 1.1; }
+.struck-result-of { font-size: 16px; color: var(--text-mid); margin-bottom: 20px; }
+.struck-result-text { font-size: 18px; color: var(--text-dark); line-height: 1.7; margin-bottom: 24px; }
+.struck-kicker { font-size: 14px; color: var(--text-light); font-style: italic; line-height: 1.7; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.06); }
+
+/* ──────── IMPACT PREVIEW ──────── */
+.impact { padding: 80px 24px; background: var(--warm-white); }
+.impact-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+.impact h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); color: var(--navy); margin-bottom: 16px; }
+.impact-sub { font-size: 16px; color: var(--text-mid); margin-bottom: 48px; max-width: 560px; margin-left: auto; margin-right: auto; }
+.pci-simple { text-align: left; margin-bottom: 40px; }
+.pci-row { margin-bottom: 24px; }
+.pci-row-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.pci-row-label { font-size: 14px; font-weight: 600; color: var(--text-mid); text-transform: uppercase; letter-spacing: 1px; }
+.pci-row-value { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; }
+.pci-row-value.before { color: #b0b0b0; }
+.pci-row-value.after { color: var(--navy); }
+.pci-bar-track { position: relative; height: 28px; background: #eee; border-radius: 14px; overflow: hidden; }
+.pci-bar-fill { height: 100%; border-radius: 14px; transition: width 1.4s ease-out; }
+.pci-bar-fill.before { background: #ccc; }
+.pci-bar-fill.after { background: linear-gradient(90deg, var(--gold), #d4a94a); }
+.pci-improvement { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: var(--coral); }
+.pci-improvement-note { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; color: var(--text-mid); }
+.impact-metrics-row { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; padding-top: 32px; border-top: 1px solid rgba(0,0,0,0.06); margin-bottom: 24px; }
+.impact-mini-metric { text-align: center; }
+.impact-mini-value { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--navy); }
+.impact-mini-label { font-size: 12px; color: var(--text-mid); margin-top: 2px; }
+.impact-note { font-size: 14px; color: var(--text-light); font-style: italic; margin-top: 24px; }
+
+/* ──────── MOONSHOT / ATOM ──────── */
+.moonshot { padding: 100px 24px; background: linear-gradient(168deg, var(--cream) 0%, var(--lavender) 100%); text-align: center; }
+.moonshot-inner { max-width: 800px; margin: 0 auto; }
+.moonshot h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); color: var(--navy); margin-bottom: 20px; }
+.moonshot-text { font-size: 18px; color: var(--text-mid); line-height: 1.8; margin-bottom: 40px; }
+.atom-stages { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+.atom-stage { padding: 16px 28px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); text-align: center; min-width: 160px; }
+.atom-stage-label { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.atom-stage-title { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--navy); }
+.atom-stage-desc { font-size: 13px; color: var(--text-light); margin-top: 4px; }
+
+/* ──────── DONATE CTA ──────── */
+.donate-cta { padding: 100px 24px; background: var(--navy); color: white; text-align: center; position: relative; }
+.donate-cta-inner { max-width: 700px; margin: 0 auto; position: relative; }
+.donate-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); margin-bottom: 20px; }
+.donate-cta p { font-size: 18px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 36px; }
+.donate-trust { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 24px; }
+
+/* Donate option tiers */
+.donate-options { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px; }
+.donate-option {
+  flex: 1 1 280px; max-width: 360px; text-align: left;
+  background: rgba(255,255,255,0.05); border: 2px solid rgba(255,255,255,0.12);
+  border-radius: 20px; padding: 28px 28px 24px; transition: all 0.3s; position: relative;
+  display: flex; flex-direction: column;
+}
+.donate-option:hover { border-color: rgba(201,168,76,0.5); transform: translateY(-3px); }
+.donate-option.featured { border-color: var(--gold); background: rgba(201,168,76,0.1); }
+.donate-option.featured::after {
+  content: 'Recommended'; position: absolute; top: -12px; left: 28px;
+  background: var(--gold); color: var(--navy); font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1px; padding: 4px 12px; border-radius: 100px;
+}
+.donate-tier-label { font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.donate-amount { font-family: 'Playfair Display', serif; font-weight: 700; color: white; line-height: 1; }
+.donate-amount .num { font-size: 52px; }
+.donate-amount .freq { font-size: 17px; color: rgba(255,255,255,0.55); font-family: 'DM Sans', sans-serif; font-weight: 500; }
+.donate-tier-desc { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.6; margin: 14px 0 18px; }
+.donate-perks { list-style: none; margin: 0 0 22px; padding: 0; }
+.donate-perks li {
+  display: flex; gap: 10px; align-items: flex-start; font-size: 14px;
+  color: rgba(255,255,255,0.88); line-height: 1.5; margin-bottom: 12px; text-align: left;
+}
+.donate-perks li::before { content: '✦'; color: var(--gold); flex-shrink: 0; font-size: 14px; line-height: 1.5; }
+.donate-perks li strong { color: white; font-weight: 600; }
+.donate-btn {
+  margin-top: auto; display: block; text-align: center; text-decoration: none;
+  padding: 14px 24px; border-radius: 100px; font-weight: 700; font-size: 16px; transition: all 0.25s;
+}
+.donate-btn.gold { background: var(--gold); color: var(--navy); }
+.donate-btn.gold:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.35); }
+.donate-btn.ghost { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.25); }
+.donate-btn.ghost:hover { border-color: white; }
+.donate-or { font-size: 13px; color: rgba(255,255,255,0.5); margin: 24px 0 8px; }
+.donate-widget-wrap { margin: 8px auto 0; max-width: 460px; }
+
+/* ──────── FOOTER ──────── */
+.footer { padding: 48px 24px 32px; background: #0F1A2E; color: rgba(255,255,255,0.4); font-size: 13px; text-align: center; }
+.footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap; }
+
+/* ──────── ANIMATIONS ──────── */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ──────── RESPONSIVE ──────── */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .mobile-toggle { display: block; }
+  .hero { padding: 120px 20px 60px; }
+  .hero-question { padding: 20px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .solution-split { grid-template-columns: 1fr; }
+  .solution-image img { min-height: 280px; }
+  .outcomes-grid { grid-template-columns: 1fr; }
+  .testimonial-carousel { grid-template-columns: 1fr; }
+  .case-head { padding: 22px 22px; }
+  .case-body-inner { padding: 0 22px 26px; }
+  .case-grid { grid-template-columns: 1fr; gap: 18px; }
+  .hero-trust { flex-direction: column; gap: 12px; }
+  .atom-stages { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Covenant<span>.</span></a>
+    <div class="nav-links">
+      <a href="https://coveofedu.org/origins-html/">Our Story</a>
+      <a href="https://coveofedu.org/program">The 7 Teachings</a>
+      <a href="#proof">Teen Stories</a>
+      <a href="https://coveofedu.org/impact">Impact</a>
+      <a href="https://www.pledge.to/widgets/donate/eetFyZno4gg4dL5y" class="btn-donate">Donate</a>
+    </div>
+    <button class="mobile-toggle" aria-label="Menu">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-label">The Teen Mental Health Crisis</div>
+  <h1>A generation is anxious, isolated, and unsure.<br><em>Self-acceptance is the door.</em></h1>
+  <p class="hero-sub">Most teens don't need to be fixed — they need to be seen. The 7 Teachings, Izzy Kiver's mentorship framework, helps teens accept who they already are, then find the confidence and courage to go after the lives waiting for them.</p>
+  <div class="hero-question">
+    Do you know a teen who feels lost, anxious, or unsure they have anything special inside them?<br>They aren't broken — and they don't have to stay stuck.
+  </div>
+  <div class="hero-ctas">
+    <a href="#proof" class="btn-primary">See two teens who changed everything</a>
+    <a href="https://coveofedu.org/program" class="btn-secondary">How the 7 Teachings work</a>
+  </div>
+  <!-- Hero Image — COE 7 Teachings Live Session -->
+  <div class="hero-call-mockup fade-in">
+    <img src="https://coveofedu.org/wp-content/uploads/2026/04/1.png" alt="Teens on a COE 7 Teachings live mentorship session with Izzy Kiver" class="hero-session-img" />
+  </div>
+  <div class="hero-trust">
+    <span>501(c)(3) Nonprofit</span>
+    <span>Tax Deductible</span>
+    <span>31 Cohorts Delivered</span>
+    <span>8 Countries</span>
+  </div>
+</section>
+
+<!-- ═══ THE PROBLEM ═══ -->
+<section class="problem">
+  <div class="problem-inner">
+    <div class="section-label">The Crisis Behind Closed Doors</div>
+    <h2>This is the loneliest, most anxious generation of teens on record.</h2>
+    <p>Rising anxiety. Collapsing confidence. Deepening isolation — made sharper by social media and a future reshaped by AI. Too many teens carry a quiet belief that they have nothing special inside them, and too few have a trusted adult who helps them see otherwise. This is a mental health crisis, and it has to be met upstream — before despair sets in.</p>
+    <div class="stats-grid">
+      <div class="stat-card fade-in">
+        <div class="stat-number">40–42%</div>
+        <div class="stat-label">of high schoolers report persistent<br>sadness or hopelessness</div>
+        <div class="stat-source">CDC Youth Risk Behavior Survey, 2021–2023</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="stat-number">4 in 10</div>
+        <div class="stat-label">teens do not feel<br>adequately supported</div>
+        <div class="stat-source">CDC/NCHS, National Health Interview Survey–Teen, 2021–2022</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="stat-number">73%</div>
+        <div class="stat-label">gap between what parents believe<br>and what teens actually feel</div>
+        <div class="stat-source">76.9% of parents say yes. 27.5% of teens agree.<br>CDC/NCHS, NHIS Report No. 206, July 2024</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="stat-number">20.9%</div>
+        <div class="stat-label">of teens globally<br>report loneliness</div>
+        <div class="stat-source">Lonely teens were 22% more likely to earn lower grades.<br>WHO Commission on Social Connection, 2025</div>
+      </div>
+    </div>
+    <p class="problem-tagline">Safety nets exist for the kid falling behind. Almost nothing exists for the kid reaching upward with empty hands — not yet in crisis, just quietly convinced they're ordinary.</p>
+  </div>
+</section>
+
+<!-- ═══ THE DOOR (self-acceptance bridge) ═══ -->
+<section class="door">
+  <div class="door-inner fade-in">
+    <div class="section-label">Why Most Approaches Miss</div>
+    <h2>You can't build confidence on a foundation of <em>"I'm not enough."</em></h2>
+    <p>Most programs try to motivate teens toward who they "should" become. The 7 Teachings starts somewhere quieter and far more powerful: helping a teen accept the person they already are. That acceptance is the door. Once a teen stops fighting themselves, confidence and courage stop being things they have to manufacture — they become things that show up on their own.</p>
+    <p>This isn't therapy, and no one gets "fixed." Teens are handed a structured framework, a mentor who treats them as capable, and a series of small challenges that surface abilities they never knew they had.</p>
+    <div class="door-pull">"Self-acceptance was the door. Everything else walked through it."</div>
+  </div>
+</section>
+
+<!-- ═══ THE SOLUTION ═══ -->
+<section class="solution" id="solution">
+  <div class="solution-inner solution-split">
+    <div class="solution-content">
+      <div class="section-label">The 7 Teachings — by Izzy Kiver</div>
+      <h2>From isolation to belonging.<br>From "I'm ordinary" to "look what I built."</h2>
+      <p class="solution-text">The 7 Teachings is a mentor-led journey created by <strong>Izzy Kiver</strong> that guides teens (and the adults around them) through self-acceptance, real peer connection, and future readiness. Each teen is met as a capable partner — not a problem to manage — and walked, challenge by challenge, just past the edge of what they believe they can do. More than a curriculum, it's a framework for becoming.</p>
+      <div class="outcomes-grid">
+        <div class="outcome-item"><div class="outcome-icon">🤍</div>Accept who you already are</div>
+        <div class="outcome-item"><div class="outcome-icon">🔥</div>Rebuild confidence and self-belief</div>
+        <div class="outcome-item"><div class="outcome-icon">🦁</div>Find courage to go after what's there</div>
+        <div class="outcome-item"><div class="outcome-icon">🤝</div>Form meaningful peer connection</div>
+        <div class="outcome-item"><div class="outcome-icon">🧭</div>Discover purpose and direction</div>
+        <div class="outcome-item"><div class="outcome-icon">⚡</div>Build real, marketable capability</div>
+      </div>
+      <a href="https://coveofedu.org/program" class="solution-cta">Explore the 7 Teachings →</a>
+    </div>
+    <div class="solution-image">
+      <img src="https://coveofedu.org/wp-content/uploads/2026/04/2.png" alt="Teens celebrating together after a 7 Teachings session" />
+      <div class="solution-image-caption">Every teen already carries something extraordinary. We help them see it.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROOF / CASE STUDIES ═══ -->
+<section class="proof" id="proof">
+  <div class="proof-inner">
+    <div class="section-label">Proof It Works</div>
+    <h2>They couldn't see it. Neither could anyone else.</h2>
+    <p class="proof-sub">No therapy. No one got "fixed." Both teens were simply handed a structured framework for discovering capabilities that were already present — but invisible to them.</p>
+    <p class="proof-hint">Tap a name to read the whole story.</p>
+
+    <!-- Elly -->
+    <div class="case-card fade-in" id="case-elly">
+      <button class="case-head" aria-expanded="false" aria-controls="elly-body">
+        <div class="case-head-text">
+          <div class="case-name">Elly</div>
+          <div class="case-hook">Jobless and weeks from eviction → director, developer, award nominee — in six months.</div>
+        </div>
+        <span class="case-toggle" aria-hidden="true">+</span>
+      </button>
+      <div class="case-body" id="elly-body">
+        <div class="case-body-inner">
+          <p>Elly was jobless and nearly out of money, communicating through a broken laptop on WhatsApp because she couldn't afford a phone. She was looking for work as a minimum-wage nanny, and weeks from being evicted for unpaid rent.</p>
+          <p>Within 10 weeks of structured mentorship through the 7 Teachings, she directed and produced her first documentary. Shot in 6K. Hired her own videographers. Rented equipment she'd never touched. Edited on software she'd never opened.</p>
+          <p>None of this was on her radar. Not dormant. Not buried. <strong>Nonexistent.</strong> She had never once imagined herself behind a camera.</p>
+          <p>What happened in between was a sequence of small challenges designed to surface capabilities she didn't know she had — editing in Descript, working with scripts, locations, lighting. Each one slightly past the edge of what she believed she could do. Each one proving the belief wrong.</p>
+          <p>Within six months she had built a coded media app for kids using Claude Code, found her own clients beyond nanny work, and was selected for a Brazilian voice-talent award.</p>
+          <div class="case-quote">"If not for Izzy and the 7 Teachings, I wouldn't have found the confidence to try programming and build a product on my own."</div>
+          <div class="case-grid">
+            <div class="case-grid-item">
+              <div class="case-grid-label">Before</div>
+              <div class="case-grid-value">Broken laptop. No phone. Searching for minimum-wage work.</div>
+            </div>
+            <div class="case-grid-item">
+              <div class="case-grid-label">After</div>
+              <div class="case-grid-value">Director. Developer. Award nominee. Building her own client base.</div>
+            </div>
+            <div class="case-grid-item">
+              <div class="case-grid-label">Timeline</div>
+              <div class="case-grid-value">Six months.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dimash -->
+    <div class="case-card fade-in" id="case-dimash">
+      <button class="case-head" aria-expanded="false" aria-controls="dimash-body">
+        <div class="case-head-text">
+          <div class="case-name">Dimash</div>
+          <div class="case-hook">Depressed and copy-pasting through school → full scholarship to a top-tier university.</div>
+        </div>
+        <span class="case-toggle" aria-hidden="true">+</span>
+      </button>
+      <div class="case-body" id="dimash-body">
+        <div class="case-body-inner">
+          <p>Dimash was depressed, copy-pasting his way through classes in Kazakhstan. Addicted to video games. Surrounded by classmates going nowhere. His parents were divorced, both relationships strained. He didn't believe he could get into any school beyond a small local community college — let alone earn a scholarship abroad. A full ride wasn't a stretch goal. It was unthinkable.</p>
+          <p>Rather than treating him as a student, Izzy brought him in as a working partner. Real client work for American tech companies. Negotiation rooms where he had to hold his own against professionals three times his age.</p>
+          <p>Within six months he was building his own software products. Not school projects — actual tools solving real problems for real users.</p>
+          <p>When it came time for university applications, he refused help with his essays. He told his mother: <em>"No one can say it better about me than I can myself."</em></p>
+          <p>SAT: 1540. He applied to MIT, KAIST, and top programs in Hong Kong and Singapore — every essay written from genuine self-knowledge, not performance.</p>
+          <p>Twelve months after his last session with Izzy, he was accepted on a full scholarship to CUHK's financial-engineering program, one of the strongest in Asia. He's there now, on his way to becoming a quantitative trader.</p>
+          <div class="case-quote">"Without Izzy, he would have been lost — he would never have uncovered his true talent or seen himself for what he is capable of." — his mother</div>
+          <div class="case-grid">
+            <div class="case-grid-item">
+              <div class="case-grid-label">Before</div>
+              <div class="case-grid-value">Depressed. Copy-pasting through school. Couldn't imagine a future beyond his zip code.</div>
+            </div>
+            <div class="case-grid-item">
+              <div class="case-grid-label">After</div>
+              <div class="case-grid-value">Full scholarship. Top-tier university. Building a career in quantitative finance.</div>
+            </div>
+            <div class="case-grid-item">
+              <div class="case-grid-label">Timeline</div>
+              <div class="case-grid-value">Eighteen months, first session to acceptance letter.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What both stories share -->
+    <div class="case-shared fade-in">
+      <h3>What both stories share</h3>
+      <p>Neither Elly nor Dimash received therapy. Neither was "fixed." Both were handed a structured framework for discovering capabilities that were already present — but invisible to them.</p>
+      <div class="case-shared-pull">Self-acceptance was the door. Everything else walked through it.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <div class="section-label">In Their Own Words</div>
+    <h2>What transformation looks like.</h2>
+    <div class="testimonial-carousel">
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-quote">
+          COE created the conditions where I could not help but become more of who I already was. I came in searching for direction — I left with a project and a purpose I never imagined.
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">D</div>
+          <div>
+            <div class="testimonial-name">Dimash</div>
+            <div class="testimonial-role">Program Graduate — now on full scholarship abroad</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-quote">
+          As a parent, I could see the brilliance in my child. Through COE, I watched that gap close — my child stopped waiting for permission to become who they already were.
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div>
+            <div class="testimonial-name">Aselya</div>
+            <div class="testimonial-role">Parent — Witnessing Transformation</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-quote">
+          A career spent in medicine and education. In COE's framework I found something most institutions have abandoned — a method that trusts young people to discover their own answers.
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JS</div>
+          <div>
+            <div class="testimonial-name">Dr. Jonathan Snyderman</div>
+            <div class="testimonial-role">Advisor &amp; Donor</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Before / After Transformation -->
+    <div class="transformation fade-in">
+      <div class="struck-lines">
+        <div class="struck-line">"I don't have anything special inside me."</div>
+        <div class="struck-line">"I don't know why I'm here."</div>
+        <div class="struck-line">"I'm not confident about the future."</div>
+      </div>
+      <div class="struck-images">
+        <img src="https://coveofedu.org/wp-content/uploads/2026/04/f5dc4c4e-0838-459f-9250-05304d7aace9.png" alt="Teen before and after transformation" />
+        <img src="https://coveofedu.org/wp-content/uploads/2026/04/45d459cf-13f8-4d11-a9bb-9199928c9c9e.png" alt="Teen before and after transformation" />
+      </div>
+      <div class="struck-result">
+        <div class="struck-result-num">165 of 170</div>
+        <div class="struck-result-of">teens stopped saying these sentences.</div>
+      </div>
+      <div class="struck-result-text">
+        They replaced them with self-acceptance, a plan, a project, and a peer group that believed in them.
+      </div>
+      <div class="struck-kicker">
+        The 5 who didn't finish are still in our system. We don't give up.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ IMPACT ═══ -->
+<section class="impact">
+  <div class="impact-inner">
+    <div class="section-label">Proven Results</div>
+    <h2>Our results — tracked and verified.</h2>
+    <p class="impact-sub">Every participant takes the Purpose Clarity Index — a 7-dimension self-assessment measuring self-acceptance, confidence, and direction — before and after the program.</p>
+    <div class="pci-simple fade-in">
+      <div class="pci-row">
+        <div class="pci-row-header">
+          <span class="pci-row-label">Before Program</span>
+          <span class="pci-row-value before">48%</span>
+        </div>
+        <div class="pci-bar-track"><div class="pci-bar-fill before" style="width:48%"></div></div>
+      </div>
+      <div class="pci-row">
+        <div class="pci-row-header">
+          <span class="pci-row-label">After Program</span>
+          <span class="pci-row-value after">90%</span>
+        </div>
+        <div class="pci-bar-track"><div class="pci-bar-fill after" style="width:90%"></div></div>
+      </div>
+      <div style="text-align:center;">
+        <div class="pci-improvement">+83% improvement</div>
+        <div class="pci-improvement-note">Average across 31 cohorts · Self-reported Purpose Clarity Index</div>
+      </div>
+    </div>
+    <div class="impact-metrics-row fade-in">
+      <div class="impact-mini-metric"><div class="impact-mini-value">96%</div><div class="impact-mini-label">Completion Rate</div></div>
+      <div class="impact-mini-metric"><div class="impact-mini-value">9/10</div><div class="impact-mini-label">Would Recommend</div></div>
+      <div class="impact-mini-metric"><div class="impact-mini-value">31</div><div class="impact-mini-label">Cohorts Completed</div></div>
+      <div class="impact-mini-metric"><div class="impact-mini-value">8</div><div class="impact-mini-label">Countries Active</div></div>
+    </div>
+    <p class="impact-note">Full longitudinal tracking — intake, midpoint, graduation, 90-day, 6-month, and 12-month follow-up — coming 2026.</p>
+  </div>
+</section>
+
+<!-- ═══ MOONSHOT / ATOM ═══ -->
+<section class="moonshot">
+  <div class="moonshot-inner">
+    <div class="section-label">The Atom</div>
+    <h2>100 million people discovering their purpose by 2040.</h2>
+    <p class="moonshot-text">It's the oldest redemption arc there is: someone in pain is met by someone who shows up — and then, healed, becomes the person who shows up for the next one. That's how a mental health crisis actually turns. Not in isolation, but in community. We measure it in atoms — single, verified moments where a person accepts who they are, builds a capability they didn't have, or shows up to change someone else's trajectory.</p>
+    <div class="atom-stages">
+      <div class="atom-stage fade-in"><div class="atom-stage-label">Stage 1</div><div class="atom-stage-title">Clarity</div><div class="atom-stage-desc">Accepting who you are</div></div>
+      <div class="atom-stage fade-in"><div class="atom-stage-label">Stage 2</div><div class="atom-stage-title">Capability</div><div class="atom-stage-desc">Building what you can do</div></div>
+      <div class="atom-stage fade-in"><div class="atom-stage-label">Stage 3</div><div class="atom-stage-title">Contribution</div><div class="atom-stage-desc">Changing someone's trajectory</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DONATE CTA ═══ -->
+<section class="donate-cta" id="donate">
+  <div class="donate-cta-inner">
+    <div class="section-label" style="color: var(--gold);">Be Part of the Redemption</div>
+    <h2>$5 toward a world where no teen suffers in silence.</h2>
+    <p>No teen should carry self-hate, bullying, or helplessness alone. Every redemption arc turns on the same moment — someone shows up. Your gift makes you that someone: it builds the community, the mentoring, and the framework that turns suffering into purpose, and lonely teens into people who show up for others.</p>
+
+    <div class="donate-options">
+      <div class="donate-option">
+        <div class="donate-tier-label">Start Here</div>
+        <div class="donate-amount"><span class="num">$5</span> <span class="freq">one-time</span></div>
+        <div class="donate-tier-desc">A single $5 gift puts you in the story. It's the smallest possible "I showed up" — and it's where almost every supporter begins.</div>
+        <a href="https://www.pledge.to/widgets/donate/eetFyZno4gg4dL5y" class="donate-btn ghost">Give $5 once →</a>
+      </div>
+
+      <div class="donate-option featured">
+        <div class="donate-tier-label">Become Part of the Solution</div>
+        <div class="donate-amount"><span class="num">$15</span> <span class="freq">/ month</span></div>
+        <div class="donate-tier-desc">Show up every month — and get the tools to keep your own mind in the same positive, resilient place you're helping teens reach.</div>
+        <ul class="donate-perks">
+          <li><strong>Be the solution, monthly.</strong> Become a steady part of the answer to the teen mental health crisis — not a one-time gesture, but a presence.</li>
+          <li><strong>A community that shows up.</strong> Access to like-minded people who want to see humanity flourish and harmonize through education, love, and kindness.</li>
+          <li><strong>Tools to keep your mind positive.</strong> Lessons, frameworks, and people that build a daily positive-mindset habit through repetition and accountability.</li>
+        </ul>
+        <a href="https://www.pledge.to/widgets/donate/eetFyZno4gg4dL5y" class="donate-btn gold">Join for $15/month →</a>
+      </div>
+    </div>
+
+    <div class="donate-or">Prefer another amount? Give securely below.</div>
+    <div class="donate-widget-wrap">
+      <div class="plg-donate" data-widget-id="eetFyZno4gg4dL5y"></div>
+    </div>
+    <div class="donate-trust">Secure. Tax-deductible. 501(c)(3) EIN: 92-2455469. Every cent tracked. Cancel a monthly gift anytime.</div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="footer-links">
+    <a href="https://coveofedu.org/origins-html/">Our Story</a>
+    <a href="https://coveofedu.org/program">The 7 Teachings</a>
+    <a href="#proof">Teen Stories</a>
+    <a href="https://coveofedu.org/impact">Impact</a>
+    <a href="https://www.pledge.to/widgets/donate/eetFyZno4gg4dL5y">Donate</a>
+    <a href="https://coveofedu.org/corporate">Partners</a>
+  </div>
+  <p>© 2026 Covenant of Education. 501(c)(3) Nonprofit. EIN: 92-2455469.</p>
+  <p style="margin-top: 6px;">3853 Northdale Blvd, Box 290, Tampa, FL</p>
+  <p style="margin-top: 12px; font-size: 11px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">Donations are tax-deductible to the full extent of the law. No goods or services were provided in exchange for this contribution. If a donor or their immediate family member directly benefits from COE programming, the donation may not be fully tax-deductible. Please consult your tax advisor.</p>
+</footer>
+
+<script>
+// Scroll nav shadow
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Fade-in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Expandable case studies
+document.querySelectorAll('.case-head').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('.case-card');
+    const isOpen = card.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+});
+
+// Open a case study automatically if linked directly (e.g. #case-elly)
+function openHashCase() {
+  const id = window.location.hash;
+  if (id === '#case-elly' || id === '#case-dimash') {
+    const card = document.querySelector(id);
+    if (card) {
+      card.classList.add('open');
+      card.querySelector('.case-head').setAttribute('aria-expanded', 'true');
+    }
+  }
+}
+window.addEventListener('hashchange', openHashCase);
+openHashCase();
+</script>
+</body>
+</html>
