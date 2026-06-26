@@ -80,7 +80,10 @@ header{padding:34px 0 22px;}
 .tier-price{font-size:15px; color:var(--text-light); margin-bottom:18px;}
 .tier-price b{font-family:'Playfair Display',serif; font-size:34px; font-weight:600; color:var(--navy);}
 .tier-promise{font-family:'Playfair Display',serif; font-style:italic; font-size:16.5px; color:var(--azure-deep); line-height:1.4; margin-bottom:18px; min-height:44px;}
-.tier-body{font-size:13.5px; line-height:1.62; color:var(--text-mid); flex:1; margin-bottom:24px;}
+.tier-body{flex:1; margin-bottom:24px;}
+.tier-perks{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:9px;}
+.tier-perks li{display:flex; align-items:flex-start; gap:9px; font-size:13.5px; line-height:1.45; color:var(--text-mid);}
+.tier-perks li svg{flex-shrink:0; margin-top:2px; opacity:.72;}
 .tier-btn{display:block; text-align:center; border-radius:100px; padding:14px 24px; font-weight:700; font-size:15px; transition:transform .2s, background .2s, color .2s;}
 .btn-primary{background:var(--coral); color:#fff; box-shadow:0 6px 20px rgba(232,115,74,0.3);}
 .btn-primary:hover{background:#D4622F; transform:translateY(-1px);}
@@ -166,7 +169,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="tier-name">Ясность</div>
         <div class="tier-price"><b>$18</b> / месяц</div>
         <div class="tier-promise">Будьте счастливы и сохраняйте позитивный настрой.</div>
-        <div class="tier-body">Приложение, которое учит вас быть счастливым и сохранять позитивный настрой. Вы отмечаете, как себя чувствуете, прорабатываете это через семь учений и видите, как ваш рост складывается в Atom Log. Каждую неделю — новый отрывок Торы, и целое сообщество рядом с вами.</div>
+        <div class="tier-body"><ul class="tier-perks">
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" stroke="#598AC1" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#598AC1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Полный доступ к приложению 7 Учений</li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" stroke="#598AC1" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#598AC1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Atom Log — отслеживайте свой эмоциональный рост</li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" stroke="#598AC1" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#598AC1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Еженедельный отрывок Торы через 7 Учений</li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" stroke="#598AC1" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#598AC1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Ежемесячные Круги связи с сообществом</li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" stroke="#598AC1" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#598AC1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Ежеквартальный AMA с Раввином Иззи</li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" stroke="#598AC1" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#598AC1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Документальный фильм «Искупление» включён</li>
+        </ul></div>
         <!-- ✎ EDIT join link -->
         <a class="tier-btn btn-ghost" href="https://pledge.to/member">Начать с Ясности</a>
       </div>
@@ -176,7 +186,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="tier-name">Способность</div>
         <div class="tier-price"><b>$54</b> / месяц <span style="color:var(--text-light)">· 3× хай</span></div>
         <div class="tier-promise">Измените свою жизнь и откройте своё предназначение.</div>
-        <div class="tier-body">Перестаньте просто управлять умом и начните менять свою жизнь. Через живое обучение философии 7 Учений вы постигаете науку успеха и направляете её на своё главное предназначение — в малых группах с фасилитатором и с личным ИИ-наставником, обученным на моём голосе. Учения приходят даже по почте: колода из семи карт, по одной на каждое. Здесь это перестаёт быть тем, что вы изучаете, и становится тем, кто вы есть.</div>
+        <div class="tier-body"><ul class="tier-perks">
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" stroke="#598AC1" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#598AC1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Всё из уровня Ясность</li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" stroke="#598AC1" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#598AC1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Малые группы с фасилитатором (хеврута)</li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" stroke="#598AC1" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#598AC1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>ИИ-наставник, обученный на голосе Раввина Иззи</li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" stroke="#598AC1" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#598AC1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Ежемесячные консультации и приоритетные вопросы</li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" stroke="#598AC1" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#598AC1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Доступ для супруга или партнёра включён</li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" stroke="#598AC1" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#598AC1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Физическая колода 7 Учений по почте</li>
+        </ul></div>
         <a class="tier-btn btn-primary" href="https://pledge.to/member">Перейти к Способности</a>
       </div>
 
@@ -185,7 +202,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="tier-name">Вклад</div>
         <div class="tier-price"><b>$108</b> / месяц <span style="color:var(--text-light)">· 6× хай</span></div>
         <div class="tier-promise">Ведите своё сообщество из любви, а не из страха.</div>
-        <div class="tier-body">Обратите всё, чему научились, вовне. Получите обучение, наставничество и консалтинг, чтобы принести 7 Учений в те залы, где вы действительно ведёте людей, работая напрямую со мной. Мы проводим совместные мероприятия под двумя нашими именами, вы получаете премиальные карты, чтобы вручать их другим лидерам, и у вас есть прямая связь со мной.</div>
+        <div class="tier-body"><ul class="tier-perks">
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" stroke="#598AC1" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#598AC1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Всё из уровня Способность</li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" stroke="#598AC1" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#598AC1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Сертификация фасилитатора 7 Учений</li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" stroke="#598AC1" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#598AC1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Прямой доступ к Раввину Иззи</li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" stroke="#598AC1" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#598AC1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Совместные мероприятия под двумя именами</li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" stroke="#598AC1" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#598AC1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Премиальные карты Посла для вашего сообщества</li>
+          <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" stroke="#598AC1" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#598AC1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Ежеквартальный стратегический круг лидеров</li>
+        </ul></div>
         <a class="tier-btn btn-ghost" href="https://pledge.to/member">Вести через Вклад</a>
       </div>
 
