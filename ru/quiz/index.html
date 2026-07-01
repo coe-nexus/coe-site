@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Урок 4 из 5 — Тест | Covenant of Education</title>
+<link rel="canonical" href="https://coveofedu.org/ru/quiz">
+<link rel="alternate" hreflang="pt-BR" href="https://coveofedu.org/quiz">
+<link rel="alternate" hreflang="en" href="https://coveofedu.org/en/quiz">
+<link rel="alternate" hreflang="ru" href="https://coveofedu.org/ru/quiz">
+<link rel="alternate" hreflang="x-default" href="https://coveofedu.org/quiz">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#1B2A4A; --azure:#598AC1; --azure-text:#3D6B9E; --coral:#E8734A;
+  --cream:#FBF8F1; --sand:#D2C0B3; --gold:#C9A84C; --gold-text:#B0902F;
+  --slate:#5A6B7D; --mist:#8A95A5; --surface:#FFFFFF; --border:#E7DFD3;
+  --f-display:'Comfortaa',system-ui,sans-serif;
+  --f-body:'DM Sans','Rethink Sans','Poppins',system-ui,sans-serif;
+  --f-hebrew:'Frank Ruhl Libre',serif;
+  --maxw:1080px; --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--f-body);background:var(--cream);color:var(--slate);
+  font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+h1,h2,h3,h4{font-family:var(--f-display);color:var(--navy);line-height:1.18;font-weight:600}
+a{color:var(--azure);text-decoration:none}
+.eyebrow{font-family:var(--f-body);text-transform:uppercase;letter-spacing:.14em;
+  font-size:12px;color:var(--coral);font-weight:600}
+.lead{max-width:64ch}
+
+/* topbar */
+.topbar{position:sticky;top:0;z-index:20;background:rgba(27,42,74,.96);
+  backdrop-filter:blur(6px);color:var(--cream);padding:12px 0}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.topbar .mark{font-family:var(--f-display);font-weight:600;font-size:18px;color:var(--cream)}
+.topbar .mark{text-decoration:none}
+.steps{display:flex;gap:7px;align-items:center}
+.steps .lbl{font-size:12px;color:var(--mist);letter-spacing:.08em;text-transform:uppercase;margin-right:4px}
+.steps .lbl b{color:var(--cream);font-weight:600}
+.steps .dot{width:30px;height:30px;border-radius:99px;display:grid;place-items:center;
+  font-family:var(--f-display);font-weight:600;font-size:13px;text-decoration:none;transition:.18s;
+  color:var(--cream);border:1.5px solid rgba(251,248,241,.5);background:transparent}
+.steps a.dot:hover{border-color:var(--coral);color:#fff}
+.steps .dot.current{background:var(--coral);border-color:var(--coral);color:#fff}
+.steps .dot.up{color:var(--mist);border-color:rgba(251,248,241,.18);opacity:.55;cursor:not-allowed}
+.steps .arrow{color:var(--cream);text-decoration:none;font-size:20px;line-height:1;padding:0 2px;opacity:.85}
+.steps .arrow:hover{color:var(--coral)}
+.steps .arrow.off{opacity:.22;pointer-events:none}
+@media(max-width:560px){.steps .lbl{display:none}}
+.topbar .right{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.langswitch{display:flex;gap:4px;border:1px solid rgba(251,248,241,.35);border-radius:100px;padding:3px}
+.langswitch a{font-size:11px;font-weight:600;letter-spacing:.04em;color:var(--mist);padding:5px 10px;border-radius:100px;transition:.2s}
+.langswitch a:hover{color:#fff}
+.langswitch a.active{background:var(--coral);color:#fff}
+@media(max-width:680px){.langswitch a{padding:4px 8px;font-size:10px}}
+
+/* hero */
+.hero{background:var(--navy);color:var(--cream);padding:96px 0 104px;position:relative;overflow:hidden}
+.hero .arch{position:absolute;right:-40px;top:40px;width:360px;height:460px;
+  background:linear-gradient(180deg,rgba(210,192,179,.22),rgba(210,192,179,.05));
+  border-radius:200px 200px 0 0}
+@media(max-width:820px){.hero .arch{display:none}}
+.hero .eyebrow{color:var(--coral)}
+.hero h1{color:var(--cream);font-size:clamp(30px,4.6vw,52px);max-width:16ch;margin:14px 0 10px}
+.hero .byline{font-size:14px;color:var(--mist);letter-spacing:.03em;margin-bottom:22px}
+.hero .byline b{color:var(--sand);font-weight:500}
+
+section{padding:76px 0}
+.section-head{max-width:64ch}
+.section-head h2{font-size:clamp(26px,3.6vw,38px);margin:10px 0 14px}
+
+/* quiz */
+.quiz{background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:44px;margin-top:8px}
+.qhead{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;gap:16px;flex-wrap:wrap}
+.qcount{font-size:13px;color:var(--mist);letter-spacing:.04em}
+.qscore{font-size:13px;color:var(--azure-text);font-weight:600}
+.qbar{height:6px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:32px}
+.qbar i{display:block;height:100%;background:var(--coral);border-radius:99px;transition:.3s}
+.qtext{font-family:var(--f-display);font-size:20px;color:var(--navy);margin-bottom:26px;line-height:1.4;max-width:72ch}
+.opts{display:flex;flex-direction:column;gap:12px}
+.opt{text-align:left;background:var(--cream);border:1.5px solid var(--border);border-radius:14px;
+  padding:16px 20px;font-family:var(--f-body);font-size:15px;color:var(--slate);cursor:pointer;
+  transition:.15s;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.opt:hover:not(:disabled){border-color:var(--azure)}
+.opt.correct{border-color:var(--azure);background:rgba(89,138,193,.12);color:var(--navy)}
+.opt.wrong{border-color:var(--coral);background:rgba(232,115,74,.1);color:var(--navy)}
+.opt:disabled{cursor:default}
+.opt .mark{font-weight:700;font-size:16px;flex:none}
+.opt.correct .mark{color:var(--azure-text)}
+.opt.wrong .mark{color:var(--coral)}
+.explain{margin-top:22px;padding:18px 22px;border-radius:14px;background:var(--cream);
+  border-left:3px solid var(--coral);font-size:14.5px;color:var(--slate);display:none;max-width:72ch}
+.explain.show{display:block}
+.qfoot{display:flex;justify-content:flex-end;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--coral);color:#fff;border:none;
+  border-radius:99px;padding:15px 30px;font-family:var(--f-body);font-weight:500;font-size:16px;cursor:pointer}
+.btn:hover{filter:brightness(1.04)}
+.btn:disabled{opacity:.4;cursor:default}
+
+/* result */
+.result{text-align:center;display:none}
+.result.show{display:block}
+.result .big{font-family:var(--f-display);font-weight:700;font-size:60px;color:var(--navy);line-height:1}
+.result .of{font-size:16px;color:var(--mist);margin-top:2px}
+.result .msg{font-family:var(--f-display);font-weight:500;font-size:22px;color:var(--navy);
+  max-width:44ch;margin:20px auto 30px;line-height:1.4}
+
+footer{background:var(--navy);color:var(--cream);padding:56px 0}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+footer .mark{font-family:var(--f-display);font-weight:600;font-size:20px}
+footer .thanks span{margin-left:20px;font-family:var(--f-display);color:var(--sand);font-size:15px}
+footer .hebrew{font-family:var(--f-hebrew)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="mark" href="/ru/problem">Covenant</a>
+    <div class="right">
+      <nav class="steps" aria-label="Навигация по урокам">
+        <span class="lbl">Урок&nbsp;<b id="curN">4</b>&nbsp;из&nbsp;5</span>
+        <a class="arrow" id="lprev" href="#" title="Предыдущий урок">‹</a>
+        <a class="dot" href="/ru/problem" data-n="1" title="Урок 1 · Понять то, что остаётся незамеченным">1</a>
+        <a class="dot" href="/ru/process" data-n="2" title="Урок 2 · Закладываем основу">2</a>
+        <a class="dot" href="/ru/mentoring" data-n="3" title="Урок 3 · От диагностики к результату">3</a>
+        <a class="dot" href="/ru/quiz" data-n="4" title="Урок 4 · Тест">4</a>
+        <a class="dot" href="/ru/feedback" data-n="5" title="Урок 5 · Заключение">5</a>
+        <a class="arrow" id="lnext" href="#" title="Следующий урок">›</a>
+      </nav>
+      <nav class="langswitch" aria-label="Язык">
+        <a href="/quiz" hreflang="pt-BR">PT</a>
+        <a href="/en/quiz" hreflang="en">EN</a>
+        <a href="/ru/quiz" class="active" hreflang="ru">RU</a>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="arch"></div>
+  <div class="wrap">
+    <span class="eyebrow">Урок 4 из 5 · Тест</span>
+    <h1>Тест</h1>
+    <p class="byline">Автор — <b>Изи Кивер</b></p>
+    <p class="lead" style="color:var(--sand);margin-top:6px;max-width:60ch">
+      Проверьте, насколько хорошо вы понимаете эмоциональную изоляцию, травлю и
+      несоответствие учебной программы у одарённых детей, а также почему принятие
+      себя важно для устойчивости и здорового развития. Узнайте, как индивидуальные
+      цели, поощрение усилий вместо результата и такие инструменты, как
+      психометрическая диагностика, помогают поддерживать сильные стороны и интересы
+      каждого ребёнка.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="quiz" id="quiz">
+      <div id="quizBody">
+        <div class="qhead">
+          <span class="qcount" id="qcount">Вопрос 1 из 6</span>
+          <span class="qscore" id="qscore">Правильных ответов: 0</span>
+        </div>
+        <div class="qbar"><i id="qbarfill" style="width:0%"></i></div>
+        <div class="qtext" id="qtext"></div>
+        <div class="opts" id="opts"></div>
+        <div class="explain" id="explain"></div>
+        <div class="qfoot"><button class="btn" id="qnext" disabled>Следующий вопрос →</button></div>
+      </div>
+
+      <div class="result" id="result">
+        <div class="big" id="rscore">0</div>
+        <div class="of">из 6 правильных</div>
+        <p class="msg" id="rmsg"></p>
+        <a class="btn" href="/ru/feedback">Перейти к Уроку 5 &nbsp;→</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="mark">Covenant of Education</div>
+    <div class="thanks">
+      <span>Obrigado</span><span>Thank you</span><span class="hebrew">תודה</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const QUESTIONS = [
+  {
+    q:'Одарённого ребёнка уже несколько раз переводили из школы в школу, и он всё больше замыкается в себе после того, как сверстники насмехаются над его отличиями. Какая ситуация лучше всего описывает совокупную проблему, о которой идёт речь?',
+    opts:[
+      { t:'Ребёнок в основном обретает более сильную мотивацию благодаря смене школ.', c:false,
+        e:'Частая смена школ в этом контексте представлена как часть проблем нестабильности и принадлежности, а не как источник более сильной мотивации.' },
+      { t:'Ребёнок в основном переживает обычную адаптацию к сложной учебной программе.', c:false,
+        e:'Сложная учебная программа может вызывать стресс, но не объясняет насмешки сверстников и повторные переводы, описанные в ситуации.' },
+      { t:'Травля и несоответствие учебной программы усиливают страдания ребёнка.', c:true,
+        e:'Этот вариант правильно определяет и плохое отношение сверстников, и повторяющиеся проблемы с распределением по школам как центральную проблему ситуации.' },
+      { t:'Ребёнок в основном демонстрирует здоровую самостоятельность по отношению к одноклассникам.', c:false,
+        e:'Замкнутость в этой ситуации связана с насмешками и повторной сменой школ, а значит указывает на страдание, а не на здоровую самостоятельность.' },
+    ]
+  },
+  {
+    q:'Родитель замечает, что его одарённый ребёнок проводит перемены в одиночестве, говорит, что сверстники не понимают его интересов, и становится всё более замкнутым после трудностей в общении с ними. Какой ответ лучше всего показывает понимание эмоциональной изоляции и её последствий?',
+    opts:[
+      { t:'Объяснить, что многие талантливые дети предпочитают одиночество и что ребёнок адаптируется без дальнейших обсуждений.', c:false,
+        e:'Это может показаться успокаивающим, но обесценивает тревожные признаки, такие как замкнутость и чувство непонимания. Предположение, что ребёнок сам адаптируется, может отложить нужную поддержку.' },
+      { t:'Побудить ребёнка больше времени уделять продвинутой учебной работе, чтобы он сосредоточился на своих сильных сторонах.', c:false,
+        e:'Фокус только на достижениях может казаться поддержкой, но не решает проблему одиночества, замкнутости и потребности ребёнка в том, чтобы его поняли. Эмоциональная изоляция требует поддержки в отношениях, а не только интеллектуальной стимуляции.' },
+      { t:'Попросить учителя перевести ребёнка в другую группу по чтению, чтобы увеличить взаимодействие со сверстниками на занятиях.', c:false,
+        e:'Смена группы может помочь с участием на занятиях, но этот ответ не признаёт напрямую эмоциональную изоляцию ребёнка и не решает лежащее в её основе чувство непонимания.' },
+      { t:'Признать чувство разобщённости ребёнка и выстраивать регулярные, эмпатичные разговоры, чтобы помочь ему почувствовать понимание и поддержку.', c:true,
+        e:'Этот ответ напрямую признаёт эмоциональную изоляцию и решает её последствия через эмпатию и связь.' },
+    ]
+  },
+  {
+    q:'Родитель хочет укрепить принятие себя у ребёнка после того, как тот расстроился из-за результата хуже ожидаемого. Какой ответ лучше всего поддерживает принятие себя?',
+    opts:[
+      { t:'«Тебе станет лучше, когда ты начнёшь выигрывать чаще в следующий раз».', c:false,
+        e:'Это звучит обнадёживающе, но связывает эмоциональное восстановление ребёнка с будущим успехом, а не с текущей самоценностью и усилиями.' },
+      { t:'«Главное — быть одним из лучших в своей группе».', c:false,
+        e:'Этот ответ фокусируется на сравнении и достижениях, что может усилить давление вместо того, чтобы способствовать принятию себя.' },
+      { t:'«Я горжусь тем, как много усилий ты приложил, и тем, чему ты научился благодаря этому».', c:true,
+        e:'Этот ответ делает акцент на усилиях и обучении, что помогает ребёнку почувствовать свою ценность не только через результат.' },
+      { t:'«Постарайся не думать об этом, потому что результат — единственное, что люди запомнят».', c:false,
+        e:'Это может показаться практичным, но обесценивает чувства и закрепляет идею, что ценность определяется результатом.' },
+    ]
+  },
+  {
+    q:'Родитель хочет создать план наставничества, который по-настоящему подходит его ребёнку. Какое действие лучше всего поддерживает индивидуальное наставничество на старте процесса?',
+    opts:[
+      { t:'Изучить результаты психометрической диагностики, чтобы определить сильные стороны и потребности ребёнка.', c:true,
+        e:'Это правильно, потому что объективные результаты диагностики помогают родителю понять уникальный профиль ребёнка перед постановкой целей или планированием поддержки.' },
+      { t:'Выбрать стандартную программу наставничества с одинаковыми целями для всех детей.', c:false,
+        e:'Это может показаться разумным, поскольку структурированные программы кажутся эффективными, но это не поддерживает индивидуальное наставничество, так как игнорирует конкретные сильные стороны и потребности ребёнка.' },
+      { t:'Подождать, пока ребёнок пройдёт несколько занятий, прежде чем изучать данные о сильных сторонах.', c:false,
+        e:'Это может показаться разумным, поскольку наблюдение на занятиях может быть полезным, но отсрочка данных диагностики снижает возможность персонализировать наставничество с самого начала.' },
+      { t:'Сосредоточиться прежде всего на школьных оценках ребёнка, чтобы определить весь подход к наставничеству.', c:false,
+        e:'Это может показаться разумным, поскольку оценки дают некоторую информацию об успеваемости, но не дают более широкого объективного представления о сильных сторонах, которое может раскрыть психометрическая диагностика.' },
+    ]
+  },
+  {
+    q:'Индивидуальные цели для ребёнка должны быть конкретными, достижимыми и вдохновляющими.',
+    opts:[
+      { t:'Верно', c:true,
+        e:'Верно. Материал указывает, что индивидуальные цели должны быть конкретными, достижимыми и вдохновляющими, чтобы по-настоящему поддерживать рост ребёнка.' },
+      { t:'Неверно', c:false,
+        e:'Неверно. Материал объясняет, что эффективные индивидуальные цели являются конкретными, достижимыми и вдохновляющими, помогая согласовать наставничество с сильными сторонами и интересами ребёнка.' },
+    ]
+  },
+  {
+    q:'Родитель хочет поддержать личностный рост одарённого ребёнка в период неуверенности в себе. Какой ответ родителя лучше всего укрепляет эмоциональное здоровье и устойчивость ребёнка через принятие себя?',
+    opts:[
+      { t:'«Твои результаты важнее всего, так что используй эту неудачу, чтобы в следующий раз стараться ещё усерднее».', c:false,
+        e:'Этот вариант включает полезную идею учиться на неудачах, но делает ценность ребёнка зависимой от результатов. Это ослабляет принятие себя и может усилить давление.' },
+      { t:'«Я горжусь тем, как сильно ты старался, и тебе достаточно того, кто ты есть, даже когда всё кажется трудным».', c:true,
+        e:'Этот ответ подтверждает ценность ребёнка, признавая при этом его усилия и трудности, что поддерживает принятие себя, эмоциональное здоровье и устойчивость.' },
+      { t:'«Если ты пока избегаешь трудных занятий, твоя уверенность вернётся легче».', c:false,
+        e:'Этот вариант может показаться заботливым, но избегание трудностей не развивает устойчивость и принятие себя. Это уменьшает возможности узнать, что ценность остаётся неизменной даже во время трудностей.' },
+      { t:'«Тебе станет лучше, как только ты снова начнёшь превосходить других детей».', c:false,
+        e:'Этот вариант звучит обнадёживающе, но связывает благополучие со сравнением и результатами, а не помогает ребёнку развить устойчивую самоценность. Это может усилить давление вместо того, чтобы укреплять устойчивость.' },
+    ]
+  },
+];
+
+let qi=0, score=0, answered=false;
+
+function renderQuestion(){
+  const item=QUESTIONS[qi];
+  document.getElementById('qcount').textContent='Вопрос '+(qi+1)+' из '+QUESTIONS.length;
+  document.getElementById('qscore').textContent='Правильных ответов: '+score;
+  document.getElementById('qbarfill').style.width=Math.round((qi/QUESTIONS.length)*100)+'%';
+  document.getElementById('qtext').textContent=item.q;
+  const explainEl=document.getElementById('explain');
+  explainEl.className='explain'; explainEl.textContent='';
+  const next=document.getElementById('qnext');
+  next.disabled=true;
+  next.textContent = qi===QUESTIONS.length-1 ? 'Посмотреть результат →' : 'Следующий вопрос →';
+
+  const opts=document.getElementById('opts');
+  opts.innerHTML='';
+  item.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.type='button';
+    b.innerHTML='<span>'+o.t+'</span><span class="mark"></span>';
+    b.onclick=()=>selectOption(i);
+    opts.appendChild(b);
+  });
+  answered=false;
+}
+
+function selectOption(i){
+  if(answered) return;
+  answered=true;
+  const item=QUESTIONS[qi];
+  const buttons=[...document.getElementById('opts').children];
+  buttons.forEach((b,idx)=>{
+    b.disabled=true;
+    if(item.opts[idx].c){ b.classList.add('correct'); b.querySelector('.mark').textContent='✓'; }
+    else if(idx===i){ b.classList.add('wrong'); b.querySelector('.mark').textContent='✕'; }
+  });
+  if(item.opts[i].c) score++;
+  document.getElementById('qscore').textContent='Правильных ответов: '+score;
+  const explainEl=document.getElementById('explain');
+  explainEl.textContent=item.opts[i].e;
+  explainEl.classList.add('show');
+  document.getElementById('qnext').disabled=false;
+}
+
+document.getElementById('qnext').onclick=()=>{
+  if(qi<QUESTIONS.length-1){ qi++; renderQuestion(); }
+  else{
+    document.getElementById('qbarfill').style.width='100%';
+    document.getElementById('quizBody').style.display='none';
+    const result=document.getElementById('result');
+    result.classList.add('show');
+    document.getElementById('rscore').textContent=score;
+    let msg;
+    if(score===QUESTIONS.length) msg='Полное владение материалом. Вы чётко понимаете, с чем сталкиваются эти дети — и как их поддержать.';
+    else if(score>=QUESTIONS.length-2) msg='Очень хорошее понимание. Перед тем как продолжить, стоит перечитать объяснения к вопросам, в которых были сомнения.';
+    else msg='Хорошее начало. Стоит повторить Уроки 1–3, прежде чем продолжить — на практике эти понятия становятся яснее.';
+    document.getElementById('rmsg').textContent=msg;
+  }
+};
+
+renderQuestion();
+
+(function(){
+  var SLUGS=['/ru/problem','/ru/process','/ru/mentoring','/ru/quiz','/ru/feedback'];
+  var AVAILABLE=5;
+  var path=location.pathname.replace(/\/$/,'')||'/ru/problem';
+  var cur=SLUGS.indexOf(path)+1; if(cur<1) cur=1;
+  document.querySelectorAll('.steps .dot').forEach(function(d){
+    if(+d.dataset.n===cur){d.classList.add('current');d.classList.remove('up');}
+  });
+  var cn=document.getElementById('curN'); if(cn) cn.textContent=cur;
+  function wire(id,t){var a=document.getElementById(id); if(!a)return;
+    if(t>=1&&t<=AVAILABLE){a.href=SLUGS[t-1];} else {a.classList.add('off');a.removeAttribute('href');}}
+  wire('lprev',cur-1); wire('lnext',cur+1);
+})();
+</script>
+</body>
+</html>

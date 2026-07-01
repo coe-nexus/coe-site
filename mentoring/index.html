@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lição 3 de 5 — Da Avaliação à Realização | Covenant of Education</title>
+<link rel="canonical" href="https://coveofedu.org/mentoring">
+<link rel="alternate" hreflang="pt-BR" href="https://coveofedu.org/mentoring">
+<link rel="alternate" hreflang="en" href="https://coveofedu.org/en/mentoring">
+<link rel="alternate" hreflang="ru" href="https://coveofedu.org/ru/mentoring">
+<link rel="alternate" hreflang="x-default" href="https://coveofedu.org/mentoring">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,6 +55,12 @@ a{color:var(--azure);text-decoration:none}
 .steps .arrow:hover{color:var(--coral)}
 .steps .arrow.off{opacity:.22;pointer-events:none}
 @media(max-width:560px){.steps .lbl{display:none}}
+.topbar .right{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.langswitch{display:flex;gap:4px;border:1px solid rgba(251,248,241,.35);border-radius:100px;padding:3px}
+.langswitch a{font-size:11px;font-weight:600;letter-spacing:.04em;color:var(--mist);padding:5px 10px;border-radius:100px;transition:.2s}
+.langswitch a:hover{color:#fff}
+.langswitch a.active{background:var(--coral);color:#fff}
+@media(max-width:680px){.langswitch a{padding:4px 8px;font-size:10px}}
 
 /* hero */
 .hero{background:var(--navy);color:var(--cream);padding:96px 0 104px;position:relative;overflow:hidden}
@@ -159,16 +170,23 @@ footer .hebrew{font-family:var(--f-hebrew)}
 <div class="topbar">
   <div class="wrap">
     <a class="mark" href="/problem">Covenant</a>
-    <nav class="steps" aria-label="Navegação entre lições">
-      <span class="lbl">Lição&nbsp;<b id="curN">3</b>&nbsp;de&nbsp;5</span>
-      <a class="arrow" id="lprev" href="#" title="Lição anterior">‹</a>
-      <a class="dot" href="/problem" data-n="1" title="Lição 1 · Compreendendo o que é mal compreendido">1</a>
-      <a class="dot" href="/process" data-n="2" title="Lição 2 · Construindo alicerces">2</a>
-      <a class="dot" href="/mentoring" data-n="3" title="Lição 3 · Da Avaliação à Realização">3</a>
-      <a class="dot" href="/quiz" data-n="4" title="Lição 4 · Quiz">4</a>
-      <a class="dot" href="/feedback" data-n="5" title="Lição 5 · Conclusão">5</a>
-      <a class="arrow" id="lnext" href="#" title="Próxima lição">›</a>
-    </nav>
+    <div class="right">
+      <nav class="steps" aria-label="Navegação entre lições">
+        <span class="lbl">Lição&nbsp;<b id="curN">3</b>&nbsp;de&nbsp;5</span>
+        <a class="arrow" id="lprev" href="#" title="Lição anterior">‹</a>
+        <a class="dot" href="/problem" data-n="1" title="Lição 1 · Compreendendo o que é mal compreendido">1</a>
+        <a class="dot" href="/process" data-n="2" title="Lição 2 · Construindo alicerces">2</a>
+        <a class="dot" href="/mentoring" data-n="3" title="Lição 3 · Da Avaliação à Realização">3</a>
+        <a class="dot" href="/quiz" data-n="4" title="Lição 4 · Quiz">4</a>
+        <a class="dot" href="/feedback" data-n="5" title="Lição 5 · Conclusão">5</a>
+        <a class="arrow" id="lnext" href="#" title="Próxima lição">›</a>
+      </nav>
+      <nav class="langswitch" aria-label="Idioma">
+        <a href="/mentoring" class="active" hreflang="pt-BR">PT</a>
+        <a href="/en/mentoring" hreflang="en">EN</a>
+        <a href="/ru/mentoring" hreflang="ru">RU</a>
+      </nav>
+    </div>
   </div>
 </div>
 
