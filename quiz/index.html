@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lição 4 de 5 — Quiz | Covenant of Education</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#1B2A4A; --azure:#598AC1; --azure-text:#3D6B9E; --coral:#E8734A;
+  --cream:#FBF8F1; --sand:#D2C0B3; --gold:#C9A84C; --gold-text:#B0902F;
+  --slate:#5A6B7D; --mist:#8A95A5; --surface:#FFFFFF; --border:#E7DFD3;
+  --f-display:'Comfortaa',system-ui,sans-serif;
+  --f-body:'DM Sans','Rethink Sans','Poppins',system-ui,sans-serif;
+  --f-hebrew:'Frank Ruhl Libre',serif;
+  --maxw:1080px; --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--f-body);background:var(--cream);color:var(--slate);
+  font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+h1,h2,h3,h4{font-family:var(--f-display);color:var(--navy);line-height:1.18;font-weight:600}
+a{color:var(--azure);text-decoration:none}
+.eyebrow{font-family:var(--f-body);text-transform:uppercase;letter-spacing:.14em;
+  font-size:12px;color:var(--coral);font-weight:600}
+.lead{max-width:64ch}
+
+/* topbar */
+.topbar{position:sticky;top:0;z-index:20;background:rgba(27,42,74,.96);
+  backdrop-filter:blur(6px);color:var(--cream);padding:12px 0}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.topbar .mark{font-family:var(--f-display);font-weight:600;font-size:18px;color:var(--cream)}
+.topbar .mark{text-decoration:none}
+.steps{display:flex;gap:7px;align-items:center}
+.steps .lbl{font-size:12px;color:var(--mist);letter-spacing:.08em;text-transform:uppercase;margin-right:4px}
+.steps .lbl b{color:var(--cream);font-weight:600}
+.steps .dot{width:30px;height:30px;border-radius:99px;display:grid;place-items:center;
+  font-family:var(--f-display);font-weight:600;font-size:13px;text-decoration:none;transition:.18s;
+  color:var(--cream);border:1.5px solid rgba(251,248,241,.5);background:transparent}
+.steps a.dot:hover{border-color:var(--coral);color:#fff}
+.steps .dot.current{background:var(--coral);border-color:var(--coral);color:#fff}
+.steps .dot.up{color:var(--mist);border-color:rgba(251,248,241,.18);opacity:.55;cursor:not-allowed}
+.steps .arrow{color:var(--cream);text-decoration:none;font-size:20px;line-height:1;padding:0 2px;opacity:.85}
+.steps .arrow:hover{color:var(--coral)}
+.steps .arrow.off{opacity:.22;pointer-events:none}
+@media(max-width:560px){.steps .lbl{display:none}}
+
+/* hero */
+.hero{background:var(--navy);color:var(--cream);padding:96px 0 104px;position:relative;overflow:hidden}
+.hero .arch{position:absolute;right:-40px;top:40px;width:360px;height:460px;
+  background:linear-gradient(180deg,rgba(210,192,179,.22),rgba(210,192,179,.05));
+  border-radius:200px 200px 0 0}
+@media(max-width:820px){.hero .arch{display:none}}
+.hero .eyebrow{color:var(--coral)}
+.hero h1{color:var(--cream);font-size:clamp(30px,4.6vw,52px);max-width:16ch;margin:14px 0 10px}
+.hero .byline{font-size:14px;color:var(--mist);letter-spacing:.03em;margin-bottom:22px}
+.hero .byline b{color:var(--sand);font-weight:500}
+
+section{padding:76px 0}
+.section-head{max-width:64ch}
+.section-head h2{font-size:clamp(26px,3.6vw,38px);margin:10px 0 14px}
+
+/* quiz */
+.quiz{background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:44px;margin-top:8px}
+.qhead{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;gap:16px;flex-wrap:wrap}
+.qcount{font-size:13px;color:var(--mist);letter-spacing:.04em}
+.qscore{font-size:13px;color:var(--azure-text);font-weight:600}
+.qbar{height:6px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:32px}
+.qbar i{display:block;height:100%;background:var(--coral);border-radius:99px;transition:.3s}
+.qtext{font-family:var(--f-display);font-size:21px;color:var(--navy);margin-bottom:26px;line-height:1.4;max-width:72ch}
+.opts{display:flex;flex-direction:column;gap:12px}
+.opt{text-align:left;background:var(--cream);border:1.5px solid var(--border);border-radius:14px;
+  padding:16px 20px;font-family:var(--f-body);font-size:15px;color:var(--slate);cursor:pointer;
+  transition:.15s;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.opt:hover:not(:disabled){border-color:var(--azure)}
+.opt.correct{border-color:var(--azure);background:rgba(89,138,193,.12);color:var(--navy)}
+.opt.wrong{border-color:var(--coral);background:rgba(232,115,74,.1);color:var(--navy)}
+.opt:disabled{cursor:default}
+.opt .mark{font-weight:700;font-size:16px;flex:none}
+.opt.correct .mark{color:var(--azure-text)}
+.opt.wrong .mark{color:var(--coral)}
+.explain{margin-top:22px;padding:18px 22px;border-radius:14px;background:var(--cream);
+  border-left:3px solid var(--coral);font-size:14.5px;color:var(--slate);display:none;max-width:72ch}
+.explain.show{display:block}
+.qfoot{display:flex;justify-content:flex-end;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--coral);color:#fff;border:none;
+  border-radius:99px;padding:15px 30px;font-family:var(--f-body);font-weight:500;font-size:16px;cursor:pointer}
+.btn:hover{filter:brightness(1.04)}
+.btn:disabled{opacity:.4;cursor:default}
+
+/* result */
+.result{text-align:center;display:none}
+.result.show{display:block}
+.result .big{font-family:var(--f-display);font-weight:700;font-size:60px;color:var(--navy);line-height:1}
+.result .of{font-size:16px;color:var(--mist);margin-top:2px}
+.result .msg{font-family:var(--f-display);font-weight:500;font-size:22px;color:var(--navy);
+  max-width:44ch;margin:20px auto 30px;line-height:1.4}
+
+footer{background:var(--navy);color:var(--cream);padding:56px 0}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+footer .mark{font-family:var(--f-display);font-weight:600;font-size:20px}
+footer .thanks span{margin-left:20px;font-family:var(--f-display);color:var(--sand);font-size:15px}
+footer .hebrew{font-family:var(--f-hebrew)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="mark" href="/problem">Covenant</a>
+    <nav class="steps" aria-label="Navegação entre lições">
+      <span class="lbl">Lição&nbsp;<b id="curN">4</b>&nbsp;de&nbsp;5</span>
+      <a class="arrow" id="lprev" href="#" title="Lição anterior">‹</a>
+      <a class="dot" href="/problem" data-n="1" title="Lição 1 · Compreendendo o que é mal compreendido">1</a>
+      <a class="dot" href="/process" data-n="2" title="Lição 2 · Construindo alicerces">2</a>
+      <a class="dot" href="/mentoring" data-n="3" title="Lição 3 · Da Avaliação à Realização">3</a>
+      <a class="dot" href="/quiz" data-n="4" title="Lição 4 · Quiz">4</a>
+      <a class="dot" href="/feedback" data-n="5" title="Lição 5 · Conclusão">5</a>
+      <a class="arrow" id="lnext" href="#" title="Próxima lição">›</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="arch"></div>
+  <div class="wrap">
+    <span class="eyebrow">Lição 4 de 5 · Quiz</span>
+    <h1>Quiz</h1>
+    <p class="byline">Por <b>Izzy Kiver</b></p>
+    <p class="lead" style="color:var(--sand);margin-top:6px;max-width:60ch">
+      Explore o quanto você compreende o isolamento emocional, o bullying e o deslocamento
+      acadêmico em crianças superdotadas, e por que a autoaceitação é importante para a
+      resiliência e o crescimento saudável. Veja como metas personalizadas, o incentivo ao
+      esforço em vez do resultado e ferramentas como avaliações psicométricas podem ajudar a
+      apoiar os pontos fortes e os interesses de cada criança.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="quiz" id="quiz">
+      <div id="quizBody">
+        <div class="qhead">
+          <span class="qcount" id="qcount">Pergunta 1 de 6</span>
+          <span class="qscore" id="qscore">Acertos: 0</span>
+        </div>
+        <div class="qbar"><i id="qbarfill" style="width:0%"></i></div>
+        <div class="qtext" id="qtext"></div>
+        <div class="opts" id="opts"></div>
+        <div class="explain" id="explain"></div>
+        <div class="qfoot"><button class="btn" id="qnext" disabled>Próxima pergunta →</button></div>
+      </div>
+
+      <div class="result" id="result">
+        <div class="big" id="rscore">0</div>
+        <div class="of">de 6 acertos</div>
+        <p class="msg" id="rmsg"></p>
+        <a class="btn" href="/feedback">Ir para a Lição 5 &nbsp;→</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="mark">Covenant of Education</div>
+    <div class="thanks">
+      <span>Obrigado</span><span>Thank you</span><span class="hebrew">תודה</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const QUESTIONS = [
+  {
+    q:'Uma criança superdotada já foi transferida entre escolas várias vezes e está se isolando cada vez mais depois que os colegas zombam de suas diferenças. Qual situação melhor identifica o desafio combinado descrito aqui?',
+    opts:[
+      { t:'A criança está, principalmente, desenvolvendo uma motivação mais forte por meio das mudanças de escola.', c:false,
+        e:'Mudanças frequentes de escola, nesse contexto, são apresentadas como parte de problemas de instabilidade e de pertencimento, e não como fonte de maior motivação.' },
+      { t:'A criança está passando, principalmente, por um processo normal de adaptação a um currículo desafiador.', c:false,
+        e:'Um currículo desafiador pode causar estresse, mas não explica as zombarias dos colegas e as repetidas transferências descritas no cenário.' },
+      { t:'O bullying e a inadequação escolar estão contribuindo para o sofrimento da criança.', c:true,
+        e:'Essa opção identifica corretamente tanto o mau tratamento por parte dos colegas quanto os repetidos problemas de colocação escolar como a questão central do cenário.' },
+      { t:'A criança demonstra, principalmente, uma independência saudável em relação aos colegas de classe.', c:false,
+        e:'O isolamento, nesse cenário, está ligado a zombarias e mudanças repetidas de escola, o que aponta para um sofrimento, e não para uma independência saudável.' },
+    ]
+  },
+  {
+    q:'Um pai percebe que seu filho, que é um gênio, passa o recreio sozinho, diz que os colegas não entendem seus interesses e tem se tornado cada vez mais retraído depois de ter dificuldade em se relacionar com os colegas. Qual resposta melhor demonstra compreensão do isolamento emocional e de seu impacto?',
+    opts:[
+      { t:'Explique que muitas crianças talentosas preferem ficar sozinhas e que a criança se adaptará sem necessidade de mais discussões.', c:false,
+        e:'Isso pode parecer reconfortante, mas minimiza sinais de alerta, como isolamento e a sensação de não ser compreendido. Presumir que a criança vai se adaptar pode atrasar o apoio necessário.' },
+      { t:'Incentive a criança a dedicar mais tempo a trabalhos acadêmicos avançados para que ela possa se concentrar em seus pontos fortes.', c:false,
+        e:'Focar apenas no desempenho pode parecer encorajador, mas não aborda a solidão, o isolamento ou a necessidade da criança de se sentir compreendida. O isolamento emocional requer apoio relacional, não apenas mais estímulo intelectual.' },
+      { t:'Peça ao professor para transferir a criança para um grupo de leitura diferente, de modo que a interação com os colegas aumente durante a aula.', c:false,
+        e:'Mudar de grupo pode ajudar na participação em sala de aula, mas essa resposta não reconhece diretamente o isolamento emocional da criança nem aborda o sentimento subjacente de ser incompreendida.' },
+      { t:'Reconheça o sentimento de desconexão da criança e promova conversas regulares e empáticas para ajudá-la a se sentir compreendida e apoiada.', c:true,
+        e:'Essa resposta reconhece diretamente o isolamento emocional e aborda seu impacto por meio da empatia e da conexão.' },
+    ]
+  },
+  {
+    q:'Um pai ou mãe quer fortalecer a autoaceitação do filho depois que ele se sente decepcionado por não ter se saído tão bem quanto o esperado. Qual resposta melhor apoia a autoaceitação?',
+    opts:[
+      { t:'"Você vai se sentir melhor quando começar a vencer com mais frequência da próxima vez."', c:false,
+        e:'Isso parece encorajador, mas vincula a recuperação emocional da criança ao sucesso futuro, em vez de à autoestima e ao esforço no presente.' },
+      { t:'"O que mais importa é ser um dos melhores do seu grupo."', c:false,
+        e:'Essa resposta se concentra na comparação e na conquista, o que pode aumentar a pressão em vez de promover a autoaceitação.' },
+      { t:'"Tenho orgulho do quanto você se esforçou e do que aprendeu com isso."', c:true,
+        e:'Essa resposta enfatiza o esforço e o aprendizado, o que ajuda a criança a se sentir valorizada além do resultado.' },
+      { t:'"Tente não pensar nisso, porque o resultado é a única coisa que as pessoas lembram."', c:false,
+        e:'Isso pode parecer prático, mas desconsidera os sentimentos e reforça a ideia de que os resultados definem o valor.' },
+    ]
+  },
+  {
+    q:'Um pai ou mãe deseja criar um plano de mentoria que realmente se adapte ao seu filho. Qual ação melhor apoia a mentoria individualizada no início do processo?',
+    opts:[
+      { t:'Analise os resultados das avaliações psicométricas para identificar os pontos fortes e as necessidades da criança.', c:true,
+        e:'Isso está correto porque os resultados de avaliações objetivas ajudam os pais a compreender o perfil único da criança antes de definir metas ou planejar o apoio.' },
+      { t:'Escolha um programa de mentoria padrão que utilize as mesmas metas para todas as crianças.', c:false,
+        e:'Programas estruturados podem parecer eficientes, mas não oferecem apoio à orientação individualizada, já que ignoram os pontos fortes e as necessidades específicas da criança.' },
+      { t:'Aguarde até que a criança conclua várias sessões antes de analisar quaisquer dados sobre seus pontos fortes.', c:false,
+        e:'A observação durante as sessões pode ser útil, mas adiar as informações de avaliação enfraquece a capacidade de personalizar a orientação desde o início.' },
+      { t:'Concentre-se primeiro nas notas acadêmicas da criança para definir a abordagem completa de mentoria.', c:false,
+        e:'As notas oferecem algumas informações sobre o desempenho, mas não fornecem a visão objetiva mais ampla sobre os pontos fortes que as avaliações psicométricas podem revelar.' },
+    ]
+  },
+  {
+    q:'Metas personalizadas para uma criança devem ser específicas, alcançáveis e inspiradoras.',
+    opts:[
+      { t:'Verdadeiro', c:true,
+        e:'Correto. O material afirma que as metas personalizadas devem ser específicas, alcançáveis e inspiradoras para que possam apoiar de forma significativa o crescimento da criança.' },
+      { t:'Falso', c:false,
+        e:'Incorreto. O material explica que metas personalizadas eficazes são específicas, alcançáveis e inspiradoras, ajudando a alinhar a orientação aos pontos fortes e interesses da criança.' },
+    ]
+  },
+  {
+    q:'Um pai ou mãe deseja apoiar o crescimento pessoal de uma criança superdotada durante um período de insegurança. Qual resposta dos pais fortalece melhor a saúde emocional e a resiliência da criança por meio da autoaceitação?',
+    opts:[
+      { t:'"Seus resultados são o que mais importa, então use esse revés para se esforçar ainda mais da próxima vez."', c:false,
+        e:'Essa escolha inclui a ideia útil de aprender com os reveses, mas centra o valor da criança nos resultados. Isso enfraquece a autoaceitação e pode intensificar a pressão.' },
+      { t:'"Tenho orgulho do quanto você se esforçou, e você é suficiente mesmo quando as coisas parecem difíceis."', c:true,
+        e:'Essa resposta valoriza a criança ao mesmo tempo em que reconhece o esforço e as dificuldades, o que promove a autoaceitação, a saúde emocional e a resiliência.' },
+      { t:'"Se você evitar atividades difíceis por enquanto, sua confiança voltará mais facilmente."', c:false,
+        e:'Essa opção pode parecer protetora, mas evitar desafios não promove resiliência nem autoaceitação. Isso reduz as oportunidades de aprender que o valor permanece intacto durante as dificuldades.' },
+      { t:'"Você vai se sentir melhor assim que voltar a se destacar em relação às outras crianças."', c:false,
+        e:'Essa escolha parece encorajadora, mas vincula o bem-estar à comparação e ao desempenho, em vez de ajudar a criança a desenvolver uma autoestima estável. Isso pode aumentar a pressão, em vez de fortalecer a resiliência.' },
+    ]
+  },
+];
+
+let qi=0, score=0, answered=false;
+
+function renderQuestion(){
+  const item=QUESTIONS[qi];
+  document.getElementById('qcount').textContent='Pergunta '+(qi+1)+' de '+QUESTIONS.length;
+  document.getElementById('qscore').textContent='Acertos: '+score;
+  document.getElementById('qbarfill').style.width=Math.round((qi/QUESTIONS.length)*100)+'%';
+  document.getElementById('qtext').textContent=item.q;
+  const explainEl=document.getElementById('explain');
+  explainEl.className='explain'; explainEl.textContent='';
+  const next=document.getElementById('qnext');
+  next.disabled=true;
+  next.textContent = qi===QUESTIONS.length-1 ? 'Ver resultado →' : 'Próxima pergunta →';
+
+  const opts=document.getElementById('opts');
+  opts.innerHTML='';
+  item.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.type='button';
+    b.innerHTML='<span>'+o.t+'</span><span class="mark"></span>';
+    b.onclick=()=>selectOption(i);
+    opts.appendChild(b);
+  });
+  answered=false;
+}
+
+function selectOption(i){
+  if(answered) return;
+  answered=true;
+  const item=QUESTIONS[qi];
+  const buttons=[...document.getElementById('opts').children];
+  buttons.forEach((b,idx)=>{
+    b.disabled=true;
+    if(item.opts[idx].c){ b.classList.add('correct'); b.querySelector('.mark').textContent='✓'; }
+    else if(idx===i){ b.classList.add('wrong'); b.querySelector('.mark').textContent='✕'; }
+  });
+  if(item.opts[i].c) score++;
+  document.getElementById('qscore').textContent='Acertos: '+score;
+  const explainEl=document.getElementById('explain');
+  explainEl.textContent=item.opts[i].e;
+  explainEl.classList.add('show');
+  document.getElementById('qnext').disabled=false;
+}
+
+document.getElementById('qnext').onclick=()=>{
+  if(qi<QUESTIONS.length-1){ qi++; renderQuestion(); }
+  else{
+    document.getElementById('qbarfill').style.width='100%';
+    document.getElementById('quizBody').style.display='none';
+    const result=document.getElementById('result');
+    result.classList.add('show');
+    document.getElementById('rscore').textContent=score;
+    let msg;
+    if(score===QUESTIONS.length) msg='Domínio completo do conteúdo. Você reconhece com clareza o que essas crianças enfrentam — e como apoiá-las.';
+    else if(score>=QUESTIONS.length-2) msg='Muito bom entendimento. Revise as explicações das perguntas que ficaram em dúvida antes de seguir.';
+    else msg='Bom começo. Vale revisar as Lições 1 a 3 antes de seguir — os conceitos ficam mais claros na prática.';
+    document.getElementById('rmsg').textContent=msg;
+  }
+};
+
+renderQuestion();
+
+/* Navegação entre lições no header. AVAILABLE = nº de lições já publicadas;
+   aumente conforme novas licao-N.html forem criadas. */
+(function(){
+  var SLUGS=['/problem','/process','/mentoring','/quiz','/feedback'];
+  var AVAILABLE=5;
+  var path=location.pathname.replace(/\/$/,'')||'/problem';
+  var cur=SLUGS.indexOf(path)+1; if(cur<1) cur=1;
+  document.querySelectorAll('.steps .dot').forEach(function(d){
+    if(+d.dataset.n===cur){d.classList.add('current');d.classList.remove('up');}
+  });
+  var cn=document.getElementById('curN'); if(cn) cn.textContent=cur;
+  function wire(id,t){var a=document.getElementById(id); if(!a)return;
+    if(t>=1&&t<=AVAILABLE){a.href=SLUGS[t-1];} else {a.classList.add('off');a.removeAttribute('href');}}
+  wire('lprev',cur-1); wire('lnext',cur+1);
+})();
+</script>
+</body>
+</html>
