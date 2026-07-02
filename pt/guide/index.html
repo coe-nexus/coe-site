@@ -63,8 +63,6 @@ a{color:var(--azure);text-decoration:none}
 @media(max-width:820px){.hero .arch{display:none}}
 .hero .eyebrow{color:var(--coral)}
 .hero h1{color:var(--cream);font-size:clamp(30px,4.8vw,50px);max-width:20ch;margin:14px auto 22px}
-.hero .sub{max-width:62ch;margin:0 auto;color:rgba(251,248,241,.86);font-size:17px}
-.hero .sub p+p{margin-top:16px}
 .hero .cta-row{display:flex;gap:16px;justify-content:center;margin-top:34px;flex-wrap:wrap}
 
 /* ===== big quote (aspas grandes flanqueando) ===== */
@@ -88,9 +86,17 @@ section{padding:76px 0}
 .muted{color:var(--mist)}
 
 /* ===== narrative prose ===== */
-.section-head.left{text-align:left;margin:0}
 .narrative{max-width:66ch;margin:22px auto 0;color:var(--slate)}
 .narrative p+p{margin-top:16px}
+
+/* ===== photos ===== */
+.coe-img{position:relative;background:var(--navy);border-radius:var(--radius);overflow:hidden;
+  margin:40px auto 0;max-width:900px}
+.coe-img img{width:100%;height:100%;object-fit:cover;display:block;
+  filter:grayscale(1) contrast(1.08) brightness(1.02)}
+.coe-img::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(27,42,74,.18),rgba(27,42,74,.4))}
+.coe-img.wide{aspect-ratio:16/9}
 
 /* ===== callout ===== */
 .callout{background:var(--navy);color:var(--cream);border-radius:22px;padding:56px;text-align:center}
@@ -136,7 +142,7 @@ footer .mark{font-family:var(--f-display);font-weight:600;font-size:20px}
         <a href="/guide" hreflang="en">EN</a>
         <a href="/ru/guide" hreflang="ru">RU</a>
       </nav>
-      <a class="cta" href="/br/membership">Aprenda como você pode ajudar →</a>
+      <a class="cta" href="/br/membership">Join to Membership →</a>
     </div>
   </div>
 </div>
@@ -146,17 +152,23 @@ footer .mark{font-family:var(--f-display);font-weight:600;font-size:20px}
   <div class="wrap">
     <span class="eyebrow">Um guia para pais</span>
     <h1>A criança que o mundo admira e nunca vê</h1>
-    <div class="sub">
+    <p class="bigquote"><span class="qmark">&ldquo;</span>Talento não é proteção contra a dor.<span class="qmark">&rdquo;</span></p>
+    <div class="cta-row">
+      <a class="btn" href="/br/membership">Join to Membership →</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="narrative" style="text-align:center">
       <p>Existe uma criança que lê anos à frente da sua série e ainda assim almoça sozinha.
         Que responde a pergunta antes de o professor terminar de fazê-la, e ouve, de cem
         formas pequenas todo dia, que algo nela não se encaixa. O mundo percebe o talento.
         Quase nunca percebe o peso por trás dele.</p>
       <p>Você talvez já conheça essa criança. Talvez tenha criado uma. Talvez tenha sido uma.</p>
     </div>
-    <p class="bigquote"><span class="qmark">&ldquo;</span>Talento não é proteção contra a dor.<span class="qmark">&rdquo;</span></p>
-    <div class="cta-row">
-      <a class="btn" href="/br/membership">Aprenda como você pode ajudar →</a>
-    </div>
+    <div class="coe-img wide"><img src="https://images.articulate.com/f:jpg,a:retain,b:fff,w:1680,q:90/rise/courses/X3wTQunjfbANCY2GaF91Zdm01jItpbqZ/f3lvCX0T_F3O6o0-.jpg" alt="Criança superdotada sozinha"></div>
   </div>
 </section>
 
@@ -181,7 +193,7 @@ footer .mark{font-family:var(--f-display);font-weight:600;font-size:20px}
 
 <section>
   <div class="wrap">
-    <div class="section-head left">
+    <div class="section-head">
       <span class="eyebrow">Um dia, por dentro</span>
       <h2>Imagine o dia como ela o vive</h2>
     </div>
@@ -197,12 +209,13 @@ footer .mark{font-family:var(--f-display);font-weight:600;font-size:20px}
         para que ninguém precise carregar isso junto com ela.</p>
       <p>Nada disso aparece no boletim. Tudo isso é real.</p>
     </div>
+    <div class="coe-img wide"><img src="https://images.articulate.com/f:jpg,a:retain,b:fff,w:1680,q:90/rise/courses/X3wTQunjfbANCY2GaF91Zdm01jItpbqZ/BKyMVDFIdh-i4iT5.jpg" alt="Criança superdotada no dia a dia escolar"></div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="section-head left">
+    <div class="section-head">
       <span class="eyebrow">Quando uma criança fica quieta</span>
       <h2>A maioria dos pais espera algo dramático</h2>
     </div>
@@ -221,7 +234,7 @@ footer .mark{font-family:var(--f-display);font-weight:600;font-size:20px}
 
 <section>
   <div class="wrap">
-    <div class="section-head left">
+    <div class="section-head">
       <span class="eyebrow">Você reconhece isso porque viveu isso</span>
       <h2>Alguns de vocês estão no meio disso agora</h2>
     </div>
@@ -253,12 +266,13 @@ footer .mark{font-family:var(--f-display);font-weight:600;font-size:20px}
         suficiente.</p>
       <p class="pull">Não podemos voltar por Tolik. Podemos seguir em frente pelo próximo.</p>
     </div>
+    <div class="coe-img wide"><img src="https://images.articulate.com/f:jpg,a:retain,b:fff,w:1680,q:90/rise/courses/X3wTQunjfbANCY2GaF91Zdm01jItpbqZ/nCnk43BtxddpfzLl.jpg" alt="Mentoria e apoio a crianças superdotadas"></div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="section-head left">
+    <div class="section-head">
       <span class="eyebrow">O que realmente ajuda</span>
       <h2>Uma criança superdotada em sofrimento não precisa ser consertada</h2>
     </div>
@@ -290,7 +304,7 @@ footer .mark{font-family:var(--f-display);font-weight:600;font-size:20px}
       <p class="lead">O Membership da Covenant of Education reúne o plano completo de mentoria —
         avaliação, acompanhamento individualizado e uma comunidade de pais que enfrentam os mesmos
         desafios que você.</p>
-      <a class="btn" href="/br/membership">Aprenda como você pode ajudar →</a>
+      <a class="btn" href="/br/membership">Join to Membership →</a>
     </div>
   </div>
 </section>
