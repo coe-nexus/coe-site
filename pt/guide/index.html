@@ -103,6 +103,7 @@ section{padding:76px 0}
 .callout .eyebrow{color:var(--coral)}
 .callout p{font-family:var(--f-display);font-weight:500;font-size:clamp(20px,2.8vw,28px);
   color:var(--cream);max-width:30ch;margin:14px auto 0;line-height:1.4}
+.callout .accent{color:var(--coral)}
 .callout .statement{font-family:var(--f-display);font-weight:700;color:var(--cream);
   font-size:clamp(30px,4.6vw,46px);line-height:1.15;margin:0 auto}
 .callout .statement .accent{color:var(--coral)}
@@ -128,6 +129,32 @@ section{padding:76px 0}
 .finalcta .lead{margin-bottom:30px}
 .finalcta .fine{margin-top:18px;font-size:13px;color:var(--mist)}
 
+/* ===== 7 Teachings stepper ===== */
+.stepper{margin-top:8px;background:var(--cream);border:1px solid var(--border);border-radius:22px;
+  overflow:hidden;text-align:left}
+.stepper .rail{display:flex;gap:10px;padding:22px 26px;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.stepper .snum{width:40px;height:40px;border-radius:99px;border:1.5px solid var(--border);
+  display:grid;place-items:center;font-family:var(--f-display);font-weight:600;color:var(--mist);
+  cursor:pointer;transition:.2s;background:var(--surface)}
+.stepper .snum.active{background:var(--navy);color:var(--cream);border-color:var(--navy)}
+.stepper .snum.done{border-color:var(--azure);color:var(--azure-text)}
+.stepper .panel{padding:34px 26px 30px}
+.stepper .kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mist)}
+.stepper .draft{display:inline-block;margin-left:10px;font-size:11px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--gold-text);border:1px solid var(--gold);border-radius:99px;padding:2px 10px}
+.stepper h3{font-size:24px;margin:8px 0 12px}
+.stepper .panel p{max-width:66ch;color:var(--slate)}
+.stepper .nav{display:flex;justify-content:space-between;align-items:center;margin-top:26px;gap:12px}
+.stepper .count{font-size:13px;color:var(--mist)}
+.mini{background:transparent;border:1px solid var(--navy);color:var(--navy);border-radius:99px;
+  padding:10px 20px;font-family:var(--f-body);font-weight:500;cursor:pointer;font-size:14px}
+.mini:disabled{opacity:.35;cursor:default}
+.mini.solid{background:var(--coral);border-color:var(--coral);color:#fff}
+.teaching-highlight{margin-top:34px}
+.teaching-highlight .statement-light{font-family:var(--f-display);font-weight:700;color:var(--navy);
+  font-size:clamp(24px,3.2vw,32px);margin:0 auto 12px}
+.teaching-highlight .lead{color:var(--slate)}
+
 /* ===== footer ===== */
 footer{background:var(--navy);color:var(--cream);padding:56px 0;margin-top:0}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
@@ -149,7 +176,7 @@ footer .mark{font-family:var(--f-display);font-weight:600;font-size:20px}
         <a href="/guide" hreflang="en">EN</a>
         <a href="/ru/guide" hreflang="ru">RU</a>
       </nav>
-      <a class="cta" href="/br/membership">Junte-se ao Membership →</a>
+      <a class="cta" href="/br/membership">Adquira os Ensinamentos →</a>
     </div>
   </div>
 </div>
@@ -161,7 +188,7 @@ footer .mark{font-family:var(--f-display);font-weight:600;font-size:20px}
     <h1>A criança que o mundo admira e nunca vê</h1>
     <p class="bigquote"><span class="qmark">&ldquo;</span>Talento não é proteção contra a dor.<span class="qmark">&rdquo;</span></p>
     <div class="cta-row">
-      <a class="btn" href="/br/membership">Junte-se ao Membership →</a>
+      <a class="btn" href="/br/membership">Adquira os Ensinamentos →</a>
     </div>
   </div>
 </section>
@@ -298,7 +325,22 @@ footer .mark{font-family:var(--f-display);font-weight:600;font-size:20px}
 <section>
   <div class="wrap">
     <div class="callout">
-      <p>Ajude o próximo adolescente a sentir que é suficiente.</p>
+      <p>Você é <span class="accent">suficiente</span>.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Autoaceitação</span>
+      <h2>Por Que a Autoaceitação É o Cerne do Crescimento</h2>
+      <p class="lead">Quando uma criança acredita que é "suficiente", ela desenvolve a
+        resiliência e a confiança necessárias para superar desafios e alcançar todo o seu
+        potencial. Como pai, mãe ou responsável, seu apoio na promoção da autoaceitação é o
+        presente mais poderoso que você pode oferecer nessa jornada.</p>
+      <p class="lead" style="margin-top:14px">A autoaceitação é mais do que apenas um
+        sentimento positivo. É o alicerce da saúde emocional e da realização.</p>
     </div>
   </div>
 </section>
@@ -308,10 +350,42 @@ footer .mark{font-family:var(--f-display);font-weight:600;font-size:20px}
     <div class="finalcta">
       <span class="eyebrow">Pronto para dar o próximo passo?</span>
       <h2>Você não precisa orientar seu filho sozinho</h2>
-      <p class="lead">O Membership da Covenant of Education reúne o plano completo de mentoria —
-        avaliação, acompanhamento individualizado e uma comunidade de pais que enfrentam os mesmos
-        desafios que você.</p>
-      <a class="btn" href="/br/membership">Junte-se ao Membership →</a>
+      <p class="lead">O processo de mentoria "7 Ensinamentos" foi criado para capacitar os
+        pais a guiarem seus filhos superdotados com empatia, estrutura e inspiração. Cada
+        etapa se apoia na anterior, criando uma abordagem holística para o desenvolvimento
+        pessoal.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="finalcta">
+      <div class="stepper" id="stepper">
+        <div class="rail" id="rail"></div>
+        <div class="panel">
+          <div class="kicker"><span id="pcount">Ensinamento 1</span><span id="pdraft"></span></div>
+          <h3 id="ptitle">Ensinamento 1 — "Atitude Mental Positiva"</h3>
+          <p id="ptext">Mantenha o otimismo e a regulação emocional sob pressão — a base de
+            toda conquista. Crie coragem diante do medo, e escolha novos caminhos em vez de
+            repetir velhos ciclos. Uma atitude mental positiva significa uma atitude mental
+            produtiva: não basta pensar, é preciso realmente fazer.</p>
+          <div class="nav">
+            <button class="mini" id="prev" disabled>← Anterior</button>
+            <span class="count" id="idx">1 de 7</span>
+            <button class="mini solid" id="next">Próximo →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="teaching-highlight">
+        <p class="statement-light">"Você é suficiente"</p>
+        <p class="lead">Aprenda o sistema e a filosofia por trás do sucesso e das
+          conquistas. Como primeiro passo do desenvolvimento pessoal está a Autoaceitação.
+          E ajude seu filho a aprender que: "Você é suficiente."</p>
+      </div>
+
+      <a class="btn" href="/br/membership">Adquira os Ensinamentos →</a>
     </div>
   </div>
 </section>
@@ -323,5 +397,38 @@ footer .mark{font-family:var(--f-display);font-weight:600;font-size:20px}
   </div>
 </footer>
 
+<script>
+/* ---- 7 Ensinamentos stepper ---- */
+const teachings = [
+  { title:'Ensinamento 1 — "Atitude Mental Positiva"', draft:false,
+    text:'Mantenha o otimismo e a regulação emocional sob pressão — a base de toda conquista. Crie coragem diante do medo, e escolha novos caminhos em vez de repetir velhos ciclos. Uma atitude mental positiva significa uma atitude mental produtiva: não basta pensar, é preciso realmente fazer.' },
+  { title:'Ensinamento 2 — "Pureza de Pensamento"', draft:false, text:'Os pais aprendem a diferenciar fatos de interpretações — a separar o que de fato aconteceu ("dado recebido") do significado que a mente atribui a isso. Ensinam a criança a reconhecer ruído mental e autossabotagem, e a responder aos fatos, não às histórias que inventamos sobre eles.' },
+  { title:'Ensinamento 3 — "Visão Através do Propósito"', draft:false, text:'Os pais aprendem a ajudar a criança a se conectar com o seu "porquê" — visualizando o futuro que deseja e quem está se tornando. Ensinam que ter um propósito claro transforma esforço disperso em direção, dando sentido às pequenas escolhas do dia a dia.' },
+  { title:'Ensinamento 4 — "Coragem Através da Tenacidade"', draft:false, text:'Os pais aprendem o valor da persistência: cumprir as promessas feitas a si mesmo, mesmo nas pequenas coisas. Ensinam a criança o "Princípio da Noite de Amanhã" — a ideia de que ações pequenas e repetidas, mantidas com constância, geram as maiores transformações ao longo do tempo.' },
+  { title:'Ensinamento 5 — "Carisma Através da Harmonia"', draft:false, text:'Os pais aprendem a importância da consciência social e da conexão genuína com os outros. Ensinam a criança a ouvir profundamente, a agregar valor real nas relações e a construir confiança — trocando a necessidade de validação pela capacidade de servir e conectar.' },
+  { title:'Ensinamento 6 — "Santuário"', draft:false, text:'Os pais aprendem sobre o poder da comunidade e da gestão de energia. Ensinam a criança a se cercar de pessoas que compartilham seus padrões e objetivos, criando um ambiente — um "santuário" — que protege e sustenta seu crescimento, em vez de drená-lo.' },
+  { title:'Ensinamento 7 — "Ritmo"', draft:false, text:'Os pais aprendem a importância de rotinas e hábitos consistentes. Ensinam a criança a alinhar suas ações diárias com seus objetivos de longo prazo, até que a excelência se torne automática — não um esforço pontual, mas um ritmo natural de vida.' },
+];
+const rail=document.getElementById('rail');
+teachings.forEach((t,i)=>{const b=document.createElement('div');b.className='snum';b.textContent=i+1;b.dataset.i=i;
+  b.onclick=()=>goto(i+1);rail.appendChild(b);});
+const snums=[...rail.children];
+let cur=1; // 1..7 = ensinamentos, sem intro
+function goto(n){
+  cur=Math.max(1,Math.min(7,n));
+  const prev=document.getElementById('prev'), next=document.getElementById('next');
+  const t=teachings[cur-1];
+  document.getElementById('ptitle').textContent=t.title;
+  document.getElementById('ptext').textContent=t.text;
+  document.getElementById('pcount').textContent='Ensinamento '+cur;
+  document.getElementById('pdraft').innerHTML=t.draft?'<span class="draft">Rascunho</span>':'';
+  document.getElementById('idx').textContent=cur+' de 7';
+  prev.disabled = cur===1; next.textContent = cur===7 ? 'Concluir ✓' : 'Próximo →';
+  snums.forEach((s,i)=>{s.classList.toggle('active',i===cur-1);s.classList.toggle('done',i<cur-1);});
+}
+document.getElementById('next').onclick=()=>{ if(cur<7) goto(cur+1); };
+document.getElementById('prev').onclick=()=>{ if(cur>1) goto(cur-1); };
+goto(1);
+</script>
 </body>
 </html>
