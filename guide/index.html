@@ -350,19 +350,26 @@ footer .mark{font-family:var(--f-display);font-weight:600;font-size:20px}
       <p class="lead">The "7 Teachings" mentorship process is designed to empower parents to
         guide their prodigious children with empathy, structure, and inspiration. Each step
         builds on the last, creating a holistic approach to personal development.</p>
+    </div>
+  </div>
+</section>
 
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="finalcta">
       <div class="stepper" id="stepper">
         <div class="rail" id="rail"></div>
         <div class="panel">
-          <div class="kicker"><span id="pcount">Introduction</span><span id="pdraft"></span></div>
-          <h3 id="ptitle">Introduction to the "7 Teachings"</h3>
-          <p id="ptext">This mentorship process was designed to empower parents to guide their
-            gifted children with empathy, structure, and inspiration. Each step builds on the
-            last, creating a holistic approach. Click START to begin with the first teaching.</p>
+          <div class="kicker"><span id="pcount">Teaching 1</span><span id="pdraft"></span></div>
+          <h3 id="ptitle">Teaching 1 — "Positive Mental Attitude"</h3>
+          <p id="ptext">Maintain optimism and emotional regulation under pressure — the
+            foundation of every achievement. Build courage in the face of fear, and choose
+            new paths instead of repeating old cycles. A positive mental attitude means a
+            productive mental attitude: not just thinking, but actually doing.</p>
           <div class="nav">
             <button class="mini" id="prev" disabled>← Previous</button>
-            <span class="count" id="idx">0 of 7</span>
-            <button class="mini solid" id="next">Start →</button>
+            <span class="count" id="idx">1 of 7</span>
+            <button class="mini solid" id="next">Next →</button>
           </div>
         </div>
       </div>
@@ -402,30 +409,22 @@ const rail=document.getElementById('rail');
 teachings.forEach((t,i)=>{const b=document.createElement('div');b.className='snum';b.textContent=i+1;b.dataset.i=i;
   b.onclick=()=>goto(i+1);rail.appendChild(b);});
 const snums=[...rail.children];
-let cur=0; // 0 = intro, 1..7 = teachings
+let cur=1; // 1..7 = teachings, no intro step
 function goto(n){
-  cur=Math.max(0,Math.min(7,n));
+  cur=Math.max(1,Math.min(7,n));
   const prev=document.getElementById('prev'), next=document.getElementById('next');
-  if(cur===0){
-    document.getElementById('ptitle').textContent='Introduction to the "7 Teachings"';
-    document.getElementById('ptext').textContent='This mentorship process was designed to empower parents to guide their gifted children with empathy, structure, and inspiration. Each step builds on the last, creating a holistic approach. Click START to begin with the first teaching.';
-    document.getElementById('pcount').textContent='Introduction';
-    document.getElementById('pdraft').textContent='';
-    document.getElementById('idx').textContent='0 of 7';
-    prev.disabled=true; next.textContent='Start →';
-  } else {
-    const t=teachings[cur-1];
-    document.getElementById('ptitle').textContent=t.title;
-    document.getElementById('ptext').textContent=t.text;
-    document.getElementById('pcount').textContent='Teaching '+cur;
-    document.getElementById('pdraft').innerHTML=t.draft?'<span class="draft">Draft</span>':'';
-    document.getElementById('idx').textContent=cur+' of 7';
-    prev.disabled=false; next.textContent = cur===7 ? 'Finish ✓' : 'Next →';
-  }
+  const t=teachings[cur-1];
+  document.getElementById('ptitle').textContent=t.title;
+  document.getElementById('ptext').textContent=t.text;
+  document.getElementById('pcount').textContent='Teaching '+cur;
+  document.getElementById('pdraft').innerHTML=t.draft?'<span class="draft">Draft</span>':'';
+  document.getElementById('idx').textContent=cur+' of 7';
+  prev.disabled = cur===1; next.textContent = cur===7 ? 'Finish ✓' : 'Next →';
   snums.forEach((s,i)=>{s.classList.toggle('active',i===cur-1);s.classList.toggle('done',i<cur-1);});
 }
 document.getElementById('next').onclick=()=>{ if(cur<7) goto(cur+1); };
-document.getElementById('prev').onclick=()=>{ goto(cur-1); };
+document.getElementById('prev').onclick=()=>{ if(cur>1) goto(cur-1); };
+goto(1);
 </script>
 </body>
 </html>
