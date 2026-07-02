@@ -150,6 +150,10 @@ section{padding:76px 0}
   padding:10px 20px;font-family:var(--f-body);font-weight:500;cursor:pointer;font-size:14px}
 .mini:disabled{opacity:.35;cursor:default}
 .mini.solid{background:var(--coral);border-color:var(--coral);color:#fff}
+.teaching-highlight{margin-top:34px}
+.teaching-highlight .statement-light{font-family:var(--f-display);font-weight:700;color:var(--navy);
+  font-size:clamp(24px,3.2vw,32px);margin:0 auto 12px}
+.teaching-highlight .lead{color:var(--slate)}
 
 /* ===== footer ===== */
 footer{background:var(--navy);color:var(--cream);padding:56px 0;margin-top:0}
@@ -363,7 +367,14 @@ footer .mark{font-family:var(--f-display);font-weight:600;font-size:20px}
         </div>
       </div>
 
-      <a class="btn" href="/membership" style="margin-top:30px">Get The Teachings →</a>
+      <div class="teaching-highlight">
+        <p class="statement-light">"You are enough"</p>
+        <p class="lead">Learn the system and philosophy behind success and achievement. As
+          the first step to personal development is Self-Acceptance. And help your child
+          learn that: "You are enough."</p>
+      </div>
+
+      <a class="btn" href="/membership">Get The Teachings →</a>
     </div>
   </div>
 </section>
@@ -378,8 +389,8 @@ footer .mark{font-family:var(--f-display);font-weight:600;font-size:20px}
 <script>
 /* ---- 7 Teachings stepper ---- */
 const teachings = [
-  { title:'Teaching 1 — "You are enough"', draft:false,
-    text:'Learn the system and philosophy behind success and achievement. As the first step to personal development is Self-Acceptance. And help your child learn that: "You are enough."' },
+  { title:'Teaching 1 — "Positive Mental Attitude"', draft:false,
+    text:'Maintain optimism and emotional regulation under pressure — the foundation of every achievement. Build courage in the face of fear, and choose new paths instead of repeating old cycles. A positive mental attitude means a productive mental attitude: not just thinking, but actually doing.' },
   { title:'Teaching 2 — "Purity of Thought"', draft:false, text:'Parents learn to separate fact from interpretation — the "data received" from the meaning the mind attaches to it. They teach the child to spot mental noise and self-sabotage, and to respond to the facts, not the stories we invent about them.' },
   { title:'Teaching 3 — "Vision Through Purpose"', draft:false, text:'Parents learn to help the child connect with their "why" — visualizing the future they want and who they are becoming. They teach that a clear purpose turns scattered effort into direction, giving meaning to everyday choices.' },
   { title:'Teaching 4 — "Courage Through Tenacity"', draft:false, text:'Parents learn the value of persistence: keeping the promises they make to themselves, even the small ones. They teach the child the "Tomorrow Evening Principle" — the idea that small, repeated actions, sustained consistently, produce the biggest changes over time.' },
