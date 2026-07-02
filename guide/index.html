@@ -107,6 +107,9 @@ section{padding:76px 0}
   font-size:clamp(30px,4.6vw,46px);line-height:1.15;margin:0 auto}
 .callout .statement .accent{color:var(--coral)}
 .callout .sub{font-size:17px;color:rgba(251,248,241,.82);max-width:52ch;margin:18px auto 0}
+.callout.split{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;text-align:left}
+.callout.split .statement,.callout.split .sub{margin:0;max-width:none}
+@media(max-width:820px){.callout.split{grid-template-columns:1fr;text-align:center}}
 
 /* ===== story block (Tolik) ===== */
 .story-block{background:var(--navy);color:var(--cream);border-radius:22px;padding:56px;
@@ -178,7 +181,7 @@ footer .mark{font-family:var(--f-display);font-weight:600;font-size:20px}
 
 <section>
   <div class="wrap">
-    <div class="callout">
+    <div class="callout split">
       <p class="statement">"I am not <span class="accent">enough</span>."</p>
       <p class="sub">Underneath the test scores and the strange, brilliant questions, there is usually
         one quiet sentence running on a loop.</p>
