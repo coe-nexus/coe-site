@@ -103,6 +103,7 @@ section{padding:76px 0}
 .callout .eyebrow{color:var(--coral)}
 .callout p{font-family:var(--f-display);font-weight:500;font-size:clamp(20px,2.8vw,28px);
   color:var(--cream);max-width:30ch;margin:14px auto 0;line-height:1.4}
+.callout .accent{color:var(--coral)}
 .callout .statement{font-family:var(--f-display);font-weight:700;color:var(--cream);
   font-size:clamp(30px,4.6vw,46px);line-height:1.15;margin:0 auto}
 .callout .statement .accent{color:var(--coral)}
@@ -127,6 +128,28 @@ section{padding:76px 0}
 .finalcta h2{margin-bottom:14px}
 .finalcta .lead{margin-bottom:30px}
 .finalcta .fine{margin-top:18px;font-size:13px;color:var(--mist)}
+
+/* ===== 7 Teachings stepper ===== */
+.stepper{margin-top:8px;background:var(--cream);border:1px solid var(--border);border-radius:22px;
+  overflow:hidden;text-align:left}
+.stepper .rail{display:flex;gap:10px;padding:22px 26px;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.stepper .snum{width:40px;height:40px;border-radius:99px;border:1.5px solid var(--border);
+  display:grid;place-items:center;font-family:var(--f-display);font-weight:600;color:var(--mist);
+  cursor:pointer;transition:.2s;background:var(--surface)}
+.stepper .snum.active{background:var(--navy);color:var(--cream);border-color:var(--navy)}
+.stepper .snum.done{border-color:var(--azure);color:var(--azure-text)}
+.stepper .panel{padding:34px 26px 30px}
+.stepper .kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mist)}
+.stepper .draft{display:inline-block;margin-left:10px;font-size:11px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--gold-text);border:1px solid var(--gold);border-radius:99px;padding:2px 10px}
+.stepper h3{font-size:24px;margin:8px 0 12px}
+.stepper .panel p{max-width:66ch;color:var(--slate)}
+.stepper .nav{display:flex;justify-content:space-between;align-items:center;margin-top:26px;gap:12px}
+.stepper .count{font-size:13px;color:var(--mist)}
+.mini{background:transparent;border:1px solid var(--navy);color:var(--navy);border-radius:99px;
+  padding:10px 20px;font-family:var(--f-body);font-weight:500;cursor:pointer;font-size:14px}
+.mini:disabled{opacity:.35;cursor:default}
+.mini.solid{background:var(--coral);border-color:var(--coral);color:#fff}
 
 /* ===== footer ===== */
 footer{background:var(--navy);color:var(--cream);padding:56px 0;margin-top:0}
@@ -295,7 +318,22 @@ footer .mark{font-family:var(--f-display);font-weight:600;font-size:20px}
 <section>
   <div class="wrap">
     <div class="callout">
-      <p>Help the next teen feel they are enough.</p>
+      <p>You are <span class="accent">enough</span>.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Self-acceptance</span>
+      <h2>Why Self-Acceptance Is the Heart of Growth</h2>
+      <p class="lead">When a child believes they are "enough," they develop the resilience and
+        confidence needed to navigate challenges and reach their full potential. As a parent
+        or guardian, your support in fostering self-acceptance is the most powerful gift you
+        can offer on this journey.</p>
+      <p class="lead" style="margin-top:14px">Self-acceptance is more than just a positive
+        feeling. It's the cornerstone of emotional health and achievement.</p>
     </div>
   </div>
 </section>
@@ -305,10 +343,27 @@ footer .mark{font-family:var(--f-display);font-weight:600;font-size:20px}
     <div class="finalcta">
       <span class="eyebrow">Ready for the next step?</span>
       <h2>You don't have to guide your child alone</h2>
-      <p class="lead">Covenant of Education's Membership brings together the full mentorship
-        plan — assessment, individualized guidance, and a community of parents facing the same
-        challenges you are.</p>
-      <a class="btn" href="/membership">Join the Membership →</a>
+      <p class="lead">The "7 Teachings" mentorship process is designed to empower parents to
+        guide their prodigious children with empathy, structure, and inspiration. Each step
+        builds on the last, creating a holistic approach to personal development.</p>
+
+      <div class="stepper" id="stepper">
+        <div class="rail" id="rail"></div>
+        <div class="panel">
+          <div class="kicker"><span id="pcount">Introduction</span><span id="pdraft"></span></div>
+          <h3 id="ptitle">Introduction to the "7 Teachings"</h3>
+          <p id="ptext">This mentorship process was designed to empower parents to guide their
+            gifted children with empathy, structure, and inspiration. Each step builds on the
+            last, creating a holistic approach. Click START to begin with the first teaching.</p>
+          <div class="nav">
+            <button class="mini" id="prev" disabled>← Previous</button>
+            <span class="count" id="idx">0 of 7</span>
+            <button class="mini solid" id="next">Start →</button>
+          </div>
+        </div>
+      </div>
+
+      <a class="btn" href="/membership" style="margin-top:30px">Get The Teachings →</a>
     </div>
   </div>
 </section>
@@ -320,5 +375,46 @@ footer .mark{font-family:var(--f-display);font-weight:600;font-size:20px}
   </div>
 </footer>
 
+<script>
+/* ---- 7 Teachings stepper ---- */
+const teachings = [
+  { title:'Teaching 1 — "You are enough"', draft:false,
+    text:'Learn the system and philosophy behind success and achievement. As the first step to personal development is Self-Acceptance. And help your child learn that: "You are enough."' },
+  { title:'Teaching 2 — "Purity of Thought"', draft:false, text:'Parents learn to separate fact from interpretation — the "data received" from the meaning the mind attaches to it. They teach the child to spot mental noise and self-sabotage, and to respond to the facts, not the stories we invent about them.' },
+  { title:'Teaching 3 — "Vision Through Purpose"', draft:false, text:'Parents learn to help the child connect with their "why" — visualizing the future they want and who they are becoming. They teach that a clear purpose turns scattered effort into direction, giving meaning to everyday choices.' },
+  { title:'Teaching 4 — "Courage Through Tenacity"', draft:false, text:'Parents learn the value of persistence: keeping the promises they make to themselves, even the small ones. They teach the child the "Tomorrow Evening Principle" — the idea that small, repeated actions, sustained consistently, produce the biggest changes over time.' },
+  { title:'Teaching 5 — "Charisma Through Harmony"', draft:false, text:'Parents learn the importance of social awareness and genuine connection with others. They teach the child to listen deeply, add real value in relationships, and build trust — trading the need for validation for the ability to serve and connect.' },
+  { title:'Teaching 6 — "Sanctuary"', draft:false, text:'Parents learn about the power of community and energy management. They teach the child to surround themselves with people who share their standards and goals, creating an environment — a "sanctuary" — that protects and sustains their growth instead of draining it.' },
+  { title:'Teaching 7 — "Rhythm"', draft:false, text:'Parents learn the importance of consistent routines and habits. They teach the child to align daily actions with long-term goals, until excellence becomes automatic — not a one-off effort, but a natural rhythm of life.' },
+];
+const rail=document.getElementById('rail');
+teachings.forEach((t,i)=>{const b=document.createElement('div');b.className='snum';b.textContent=i+1;b.dataset.i=i;
+  b.onclick=()=>goto(i+1);rail.appendChild(b);});
+const snums=[...rail.children];
+let cur=0; // 0 = intro, 1..7 = teachings
+function goto(n){
+  cur=Math.max(0,Math.min(7,n));
+  const prev=document.getElementById('prev'), next=document.getElementById('next');
+  if(cur===0){
+    document.getElementById('ptitle').textContent='Introduction to the "7 Teachings"';
+    document.getElementById('ptext').textContent='This mentorship process was designed to empower parents to guide their gifted children with empathy, structure, and inspiration. Each step builds on the last, creating a holistic approach. Click START to begin with the first teaching.';
+    document.getElementById('pcount').textContent='Introduction';
+    document.getElementById('pdraft').textContent='';
+    document.getElementById('idx').textContent='0 of 7';
+    prev.disabled=true; next.textContent='Start →';
+  } else {
+    const t=teachings[cur-1];
+    document.getElementById('ptitle').textContent=t.title;
+    document.getElementById('ptext').textContent=t.text;
+    document.getElementById('pcount').textContent='Teaching '+cur;
+    document.getElementById('pdraft').innerHTML=t.draft?'<span class="draft">Draft</span>':'';
+    document.getElementById('idx').textContent=cur+' of 7';
+    prev.disabled=false; next.textContent = cur===7 ? 'Finish ✓' : 'Next →';
+  }
+  snums.forEach((s,i)=>{s.classList.toggle('active',i===cur-1);s.classList.toggle('done',i<cur-1);});
+}
+document.getElementById('next').onclick=()=>{ if(cur<7) goto(cur+1); };
+document.getElementById('prev').onclick=()=>{ goto(cur-1); };
+</script>
 </body>
 </html>
