@@ -406,21 +406,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h3 id="leadModalTitle">Get the Parent Guide</h3>
     <p class="modal-sub">Enter your email and we'll take you straight to the guide — and keep you posted on new resources for parents like you.</p>
     <!--
-      Replace the form's "action" below with your real ESP endpoint
-      (Mailchimp / Brevo / ConvertKit form action URL, or a Google Apps
-      Script Web App URL if you're capturing to a Google Sheet).
-      The form posts to a hidden iframe so this page never navigates
-      away on submit — we control the redirect to /thank-you ourselves,
-      right after the browser fires the request.
+      Wired to the same Buttondown list already used on the homepage
+      (index.html: action="https://buttondown.com/api/emails/embed-subscribe/coe").
+      Posts to a hidden iframe so this page never navigates away on
+      submit — we control the redirect to /thank-you ourselves.
+
+      Optional tag: the homepage sends a hidden "tag" field with a
+      Buttondown-generated tag ID (looks like sub_tag_xxxxxxxx) to mark
+      subscribers who opted in from the movie premiere. Buttondown tag
+      IDs are opaque and can't be guessed — if you want to segment
+      "came from the Parent Guide" leads the same way, create a tag in
+      your Buttondown dashboard (Settings → Tags), then add:
+        <input type="hidden" name="tag" value="YOUR_TAG_ID_HERE">
+      Without it, subscribers still land on the "coe" list, just untagged.
     -->
-    <form id="leadForm" action="REPLACE_WITH_YOUR_ESP_FORM_ACTION_URL" method="POST" target="lead_hidden_iframe">
+    <form id="leadForm" action="https://buttondown.com/api/emails/embed-subscribe/coe" method="POST" target="lead_hidden_iframe">
       <div class="field">
         <label for="leadFirstName">First name <span class="opt">(optional)</span></label>
-        <input type="text" id="leadFirstName" name="FNAME" autocomplete="given-name">
+        <input type="text" id="leadFirstName" name="first_name" autocomplete="given-name">
       </div>
       <div class="field">
         <label for="leadEmail">Email</label>
-        <input type="email" id="leadEmail" name="EMAIL" required autocomplete="email">
+        <input type="email" id="leadEmail" name="email" required autocomplete="email">
       </div>
       <button type="submit" class="btn" id="leadSubmit">Send Me the Guide →</button>
     </form>
@@ -459,8 +466,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // The actual POST fires against the hidden iframe above (see the
     // form's target attribute), so this page keeps running. We can't
     // read the cross-origin iframe's response, so we treat the submit
-    // itself as success and redirect shortly after — this only really
-    // works once the "action" URL above points at your real ESP.
+    // itself as success and redirect shortly after — same pattern
+    // already used for the Buttondown opt-in on the homepage.
     setTimeout(function(){ window.location.href='/thank-you'; }, 700);
   });
 })();
