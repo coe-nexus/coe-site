@@ -421,12 +421,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       from buttondown.com/settings/embedding, which handles Turnstile
       itself instead of us working around it.
 
-      Tagged "sub_tag_6kz4pwkhym9m4t8wye475fj8wz" so these leads (came
-      from the Parent Guide CTA) are segmented from the homepage's
-      movie-premiere opt-ins in Buttondown.
+      Tag: the embed "tag" field takes the tag's NAME, not its
+      sub_tag_* ID. Passing the ID makes Buttondown create a junk tag
+      literally named after that ID string, and the real named tag
+      never gets anyone. So we pass the name "problem_guide" — make
+      sure a tag with exactly that name exists (or let Buttondown
+      auto-create it) and point the automation at "problem_guide".
     -->
     <form id="leadForm" action="https://buttondown.com/api/emails/embed-subscribe/coe" method="POST" target="_blank">
-      <input type="hidden" name="tag" value="sub_tag_6kz4pwkhym9m4t8wye475fj8wz">
+      <input type="hidden" name="tag" value="problem_guide">
       <div class="field">
         <label for="leadFirstName">First name <span class="opt">(optional)</span></label>
         <input type="text" id="leadFirstName" name="first_name" autocomplete="given-name">
