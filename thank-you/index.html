@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K9NZLKM9');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're In — Covenant of Education</title>
+<meta name="description" content="Thanks for requesting the Parent Guide. Check your inbox — we're taking you to the guide now.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://coveofedu.org/thank-you">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#1B2A4A; --azure:#598AC1; --coral:#E8734A;
+  --cream:#FBF8F1; --sand:#D2C0B3; --gold:#C9A84C;
+  --slate:#5A6B7D; --mist:#8A95A5; --border:#E7DFD3;
+  --f-display:'Comfortaa',system-ui,sans-serif;
+  --f-body:'DM Sans','Rethink Sans','Poppins',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--f-body);background:var(--navy);color:var(--cream);
+  font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;
+  min-height:100vh;display:flex;flex-direction:column}
+.wrap{max-width:640px;margin:0 auto;padding:0 24px;width:100%}
+h1,h2{font-family:var(--f-display);font-weight:600;line-height:1.2}
+a{color:var(--azure)}
+
+header.top{padding:28px 0}
+header.top .mark{font-family:var(--f-display);font-weight:600;font-size:18px;
+  color:var(--cream);text-decoration:none}
+
+main{flex:1;display:flex;align-items:center;padding:40px 0 60px}
+main .panel{text-align:center;position:relative;overflow:hidden;
+  background:rgba(251,248,241,.04);border:1px solid rgba(251,248,241,.14);
+  border-radius:22px;padding:56px 40px}
+.check{width:64px;height:64px;border-radius:99px;background:var(--coral);
+  display:grid;place-items:center;margin:0 auto 26px;font-size:30px;color:#fff}
+.eyebrow{font-family:var(--f-body);text-transform:uppercase;letter-spacing:.14em;
+  font-size:12px;color:var(--coral);font-weight:600;display:block;margin-bottom:12px}
+h1{font-size:clamp(28px,4.4vw,42px);margin-bottom:16px}
+.sub{color:rgba(251,248,241,.82);font-size:17px;max-width:44ch;margin:0 auto}
+
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--coral);color:#fff;
+  border:none;border-radius:99px;padding:15px 32px;font-family:var(--f-body);font-weight:600;
+  font-size:16px;cursor:pointer;text-decoration:none;margin-top:34px}
+.btn:hover{filter:brightness(1.05)}
+
+.redirect-note{margin-top:20px;font-size:13px;color:var(--mist)}
+
+footer{padding:28px 0;text-align:center;color:var(--mist);font-size:13px}
+footer .mark{font-family:var(--f-display);color:var(--sand);font-weight:600}
+
+@media(max-width:600px){
+  main .panel{padding:44px 24px}
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9NZLKM9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="/problem">Covenant</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="panel">
+      <div class="check" aria-hidden="true">&#10003;</div>
+      <span class="eyebrow">You're in</span>
+      <h1>Check your inbox</h1>
+      <p class="sub">We've sent your confirmation. We're taking you straight to the
+        guide — or click below if you'd rather jump ahead now.</p>
+      <a class="btn" href="/guide" id="guideLink">Read the Guide Now →</a>
+      <p class="redirect-note" id="redirectNote">Redirecting you to the guide in a few seconds…</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span class="mark">Covenant of Education</span> · coveofedu.org
+</footer>
+
+<script>
+setTimeout(function(){ window.location.href = '/guide'; }, 3000);
+</script>
+</body>
+</html>

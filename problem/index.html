@@ -149,6 +149,27 @@ footer .hebrew{font-family:var(--f-hebrew)}
   .flip{height:auto;min-height:180px}
   .finalcta{padding:36px 24px}
 }
+
+/* ===== lead capture modal ===== */
+.modal-overlay{position:fixed;inset:0;background:rgba(27,42,74,.72);z-index:100;
+  display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal-panel{position:relative;background:var(--cream);border-radius:20px;max-width:440px;
+  width:100%;padding:44px 36px;box-shadow:0 30px 80px rgba(27,42,74,.35)}
+.modal-panel h3{font-size:26px;margin:10px 0 10px}
+.modal-panel .modal-sub{color:var(--slate);font-size:15px;margin-bottom:26px}
+.modal-close{position:absolute;top:14px;right:16px;background:none;border:none;
+  font-size:26px;line-height:1;color:var(--mist);cursor:pointer;padding:6px}
+.modal-close:hover{color:var(--navy)}
+.modal-close:focus-visible,.leadForm input:focus-visible,.leadForm button:focus-visible{
+  outline:2.5px solid var(--azure);outline-offset:2px}
+.field{margin-bottom:16px;text-align:left}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.field label .opt{font-weight:400;color:var(--mist);text-transform:none;letter-spacing:0}
+.field input{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;
+  font-family:var(--f-body);font-size:15px;color:var(--navy);background:var(--surface)}
+.field input:focus{border-color:var(--azure);outline:none}
+#leadForm .btn{width:100%;justify-content:center;margin-top:6px}
 </style>
 </head>
 <body>
@@ -167,7 +188,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="/problem" class="active" hreflang="en">EN</a>
         <a href="/ru/problem" hreflang="ru">RU</a>
       </nav>
-      <a class="cta" href="/guide">See the Parent Guide →</a>
+      <a class="cta" href="/guide" data-open-guide-form>See the Parent Guide →</a>
     </div>
   </div>
 </div>
@@ -363,7 +384,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         on. The Parent Guide walks you the rest of the way — from reading the signs to
         giving all that fire a direction to go in, and helping your child slowly begin
         to believe they were always enough.</p>
-      <a class="btn" href="/guide">See the Parent Guide &nbsp;→</a>
+      <a class="btn" href="/guide" data-open-guide-form>See the Parent Guide &nbsp;→</a>
     </div>
   </div>
 </section>
@@ -376,6 +397,74 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </footer>
+
+<!-- lead capture modal -->
+<div class="modal-overlay" id="leadModalOverlay">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
+    <button class="modal-close" id="leadModalClose" type="button" aria-label="Close">&times;</button>
+    <span class="eyebrow">For parents of gifted children</span>
+    <h3 id="leadModalTitle">Get the Parent Guide</h3>
+    <p class="modal-sub">Enter your email and we'll take you straight to the guide — and keep you posted on new resources for parents like you.</p>
+    <!--
+      Replace the form's "action" below with your real ESP endpoint
+      (Mailchimp / Brevo / ConvertKit form action URL, or a Google Apps
+      Script Web App URL if you're capturing to a Google Sheet).
+      The form posts to a hidden iframe so this page never navigates
+      away on submit — we control the redirect to /thank-you ourselves,
+      right after the browser fires the request.
+    -->
+    <form id="leadForm" action="REPLACE_WITH_YOUR_ESP_FORM_ACTION_URL" method="POST" target="lead_hidden_iframe">
+      <div class="field">
+        <label for="leadFirstName">First name <span class="opt">(optional)</span></label>
+        <input type="text" id="leadFirstName" name="FNAME" autocomplete="given-name">
+      </div>
+      <div class="field">
+        <label for="leadEmail">Email</label>
+        <input type="email" id="leadEmail" name="EMAIL" required autocomplete="email">
+      </div>
+      <button type="submit" class="btn" id="leadSubmit">Send Me the Guide →</button>
+    </form>
+    <iframe name="lead_hidden_iframe" id="leadHiddenIframe" style="display:none" title="form submission target"></iframe>
+  </div>
+</div>
+
+<script>
+(function(){
+  var overlay=document.getElementById('leadModalOverlay');
+  var openers=document.querySelectorAll('[data-open-guide-form]');
+  var closeBtn=document.getElementById('leadModalClose');
+  var form=document.getElementById('leadForm');
+  var lastFocused=null;
+
+  function openModal(e){
+    if(e) e.preventDefault();
+    lastFocused=document.activeElement;
+    overlay.classList.add('open');
+    document.body.style.overflow='hidden';
+    document.getElementById('leadEmail').focus();
+  }
+  function closeModal(){
+    overlay.classList.remove('open');
+    document.body.style.overflow='';
+    if(lastFocused) lastFocused.focus();
+  }
+  openers.forEach(function(a){ a.addEventListener('click', openModal); });
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e){ if(e.target===overlay) closeModal(); });
+  document.addEventListener('keydown', function(e){
+    if(e.key==='Escape' && overlay.classList.contains('open')) closeModal();
+  });
+
+  form.addEventListener('submit', function(){
+    // The actual POST fires against the hidden iframe above (see the
+    // form's target attribute), so this page keeps running. We can't
+    // read the cross-origin iframe's response, so we treat the submit
+    // itself as success and redirect shortly after — this only really
+    // works once the "action" URL above points at your real ESP.
+    setTimeout(function(){ window.location.href='/thank-you'; }, 700);
+  });
+})();
+</script>
 
 </body>
 </html>
