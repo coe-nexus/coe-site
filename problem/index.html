@@ -170,6 +170,7 @@ footer .hebrew{font-family:var(--f-hebrew)}
   font-family:var(--f-body);font-size:15px;color:var(--navy);background:var(--surface)}
 .field input:focus{border-color:var(--azure);outline:none}
 #leadForm .btn{width:100%;justify-content:center;margin-top:6px}
+.modal-note{font-size:12.5px;color:var(--mist);margin-top:14px;text-align:center}
 </style>
 </head>
 <body>
@@ -408,14 +409,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!--
       Wired to the same Buttondown list already used on the homepage
       (index.html: action="https://buttondown.com/api/emails/embed-subscribe/coe").
-      Posts to a hidden iframe so this page never navigates away on
-      submit — we control the redirect to /thank-you ourselves.
+
+      Buttondown now gates this endpoint behind a Cloudflare Turnstile
+      check ("Verify Your Subscription"), which needs a visible tab to
+      render and be solved — a hidden iframe silently stalls there and
+      no subscriber ever gets created. So the form opens in a NEW TAB
+      (target="_blank") where the visitor completes that quick check
+      and lands on Buttondown's own confirmation page, while this tab
+      moves on to /thank-you right away. This is the simple fix; the
+      cleaner long-term one is Buttondown's official embeddable widget
+      from buttondown.com/settings/embedding, which handles Turnstile
+      itself instead of us working around it.
 
       Tagged "sub_tag_0hbfp4gc9x8y99zaz9vp478rqm" so these leads (came
       from the Parent Guide CTA) are segmented from the homepage's
       movie-premiere opt-ins in Buttondown.
     -->
-    <form id="leadForm" action="https://buttondown.com/api/emails/embed-subscribe/coe" method="POST" target="lead_hidden_iframe">
+    <form id="leadForm" action="https://buttondown.com/api/emails/embed-subscribe/coe" method="POST" target="_blank">
       <input type="hidden" name="tag" value="sub_tag_0hbfp4gc9x8y99zaz9vp478rqm">
       <div class="field">
         <label for="leadFirstName">First name <span class="opt">(optional)</span></label>
@@ -427,7 +437,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <button type="submit" class="btn" id="leadSubmit">Send Me the Guide →</button>
     </form>
-    <iframe name="lead_hidden_iframe" id="leadHiddenIframe" style="display:none" title="form submission target"></iframe>
+    <p class="modal-note">This opens a quick verification step from Buttondown in a new tab — just confirm there, and we'll take you to the guide here.</p>
   </div>
 </div>
 
@@ -459,12 +469,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
 
   form.addEventListener('submit', function(){
-    // The actual POST fires against the hidden iframe above (see the
-    // form's target attribute), so this page keeps running. We can't
-    // read the cross-origin iframe's response, so we treat the submit
-    // itself as success and redirect shortly after — same pattern
-    // already used for the Buttondown opt-in on the homepage.
-    setTimeout(function(){ window.location.href='/thank-you'; }, 700);
+    // The form itself opens Buttondown's verification step in a new
+    // tab (target="_blank"), so this tab is free to move on right
+    // away — no need to wait on anything here.
+    setTimeout(function(){ window.location.href='/thank-you'; }, 250);
   });
 })();
 </script>
