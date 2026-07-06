@@ -451,6 +451,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     overlay.classList.add('open');
     document.body.style.overflow='hidden';
     document.getElementById('leadEmail').focus();
+    if(window.dataLayer) window.dataLayer.push({event:'guide_modal_open'});
   }
   function closeModal(){
     overlay.classList.remove('open');
@@ -491,7 +492,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     })
     .then(function(r){ return r.json().catch(function(){ return {}; }); })
     .then(function(j){
-      if(j && j.ok){ window.location.href = '/thank-you'; return; }
+      if(j && j.ok){ if(window.dataLayer) window.dataLayer.push({event:'guide_lead_submit'}); window.location.href = '/thank-you'; return; }
       throw new Error('failed');
     })
     .catch(function(){
