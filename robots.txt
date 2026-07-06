@@ -1,0 +1,42 @@
+# coveofedu.org — a mission-driven education nonprofit publishing free
+# content. AI search/answer engines and training crawlers are welcomed;
+# nothing here is blocked.
+
+User-agent: *
+Allow: /
+
+# --- AI search / answer / assistant crawlers (explicitly allowed) ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Google-NotebookLM
+Allow: /
+
+Sitemap: https://coveofedu.org/blog/sitemap-index.xml
