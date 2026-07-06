@@ -170,7 +170,8 @@ footer .hebrew{font-family:var(--f-hebrew)}
   font-family:var(--f-body);font-size:15px;color:var(--navy);background:var(--surface)}
 .field input:focus{border-color:var(--azure);outline:none}
 #leadForm .btn{width:100%;justify-content:center;margin-top:6px}
-.modal-note{font-size:12.5px;color:var(--mist);margin-top:14px;text-align:center}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.modal-err{margin-top:14px;font-size:13.5px;color:var(--coral);font-weight:600;text-align:center}
 </style>
 </head>
 <body>
@@ -407,29 +408,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h3 id="leadModalTitle">Get the Parent Guide</h3>
     <p class="modal-sub">Enter your email and we'll take you straight to the guide — and keep you posted on new resources for parents like you.</p>
     <!--
-      Wired to the same Buttondown list already used on the homepage
-      (index.html: action="https://buttondown.com/api/emails/embed-subscribe/coe").
-
-      Buttondown now gates this endpoint behind a Cloudflare Turnstile
-      check ("Verify Your Subscription"), which needs a visible tab to
-      render and be solved — a hidden iframe silently stalls there and
-      no subscriber ever gets created. So the form opens in a NEW TAB
-      (target="_blank") where the visitor completes that quick check
-      and lands on Buttondown's own confirmation page, while this tab
-      moves on to /thank-you right away. This is the simple fix; the
-      cleaner long-term one is Buttondown's official embeddable widget
-      from buttondown.com/settings/embedding, which handles Turnstile
-      itself instead of us working around it.
-
-      Tag: the embed "tag" field takes the tag's NAME, not its
-      sub_tag_* ID. Passing the ID makes Buttondown create a junk tag
-      literally named after that ID string, and the real named tag
-      never gets anyone. So we pass the name "problem_guide" — make
-      sure a tag with exactly that name exists (or let Buttondown
-      auto-create it) and point the automation at "problem_guide".
+      Submits to our own Cloudflare Worker at /api/subscribe (separate
+      "coe-subscribe" Worker on the coveofedu.org/api/subscribe route).
+      That Worker calls Buttondown's authenticated API (which has no
+      Turnstile wall), creates the subscriber active/single-opt-in, and
+      tags "problem_guide". Same-origin fetch, so no new tab and no
+      captcha for the visitor. On success we send them to /thank-you.
+      The "website" field is a honeypot: hidden from people, filled by
+      bots — the Worker quietly ignores those.
     -->
-    <form id="leadForm" action="https://buttondown.com/api/emails/embed-subscribe/coe" method="POST" target="_blank">
-      <input type="hidden" name="tag" value="problem_guide">
+    <form id="leadForm" novalidate>
+      <div class="hp" aria-hidden="true">
+        <label>Leave this field empty
+          <input type="text" name="website" tabindex="-1" autocomplete="off">
+        </label>
+      </div>
       <div class="field">
         <label for="leadFirstName">First name <span class="opt">(optional)</span></label>
         <input type="text" id="leadFirstName" name="first_name" autocomplete="given-name">
@@ -439,8 +432,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <input type="email" id="leadEmail" name="email" required autocomplete="email">
       </div>
       <button type="submit" class="btn" id="leadSubmit">Send Me the Guide →</button>
+      <p class="modal-err" id="leadErr" role="alert" hidden>Something went wrong. Please try again.</p>
     </form>
-    <p class="modal-note">This opens a quick verification step from Buttondown in a new tab — just confirm there, and we'll take you to the guide here.</p>
   </div>
 </div>
 
@@ -471,11 +464,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if(e.key==='Escape' && overlay.classList.contains('open')) closeModal();
   });
 
-  form.addEventListener('submit', function(){
-    // The form itself opens Buttondown's verification step in a new
-    // tab (target="_blank"), so this tab is free to move on right
-    // away — no need to wait on anything here.
-    setTimeout(function(){ window.location.href='/thank-you'; }, 250);
+  var submitBtn = document.getElementById('leadSubmit');
+  var errEl = document.getElementById('leadErr');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(errEl) errEl.hidden = true;
+
+    var email = document.getElementById('leadEmail').value.trim();
+    if(!email || email.indexOf('@') < 1){ document.getElementById('leadEmail').focus(); return; }
+
+    var original = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: email,
+        first_name: document.getElementById('leadFirstName').value.trim(),
+        website: form.website ? form.website.value : '',
+        source: 'problem_guide',
+        page_url: location.href
+      })
+    })
+    .then(function(r){ return r.json().catch(function(){ return {}; }); })
+    .then(function(j){
+      if(j && j.ok){ window.location.href = '/thank-you'; return; }
+      throw new Error('failed');
+    })
+    .catch(function(){
+      submitBtn.disabled = false;
+      submitBtn.textContent = original;
+      if(errEl) errEl.hidden = false;
+    });
   });
 })();
 </script>
