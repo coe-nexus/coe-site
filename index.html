@@ -10,175 +10,146 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>We Are Enough — Covenant of Education</title>
+<title>Covenant of Education · Mentoring Brilliant Outliers</title>
+<meta name="description" content="Bespoke mentorship for gifted kids who don't fit the system. We find the talent, develop it with specialists, and put it to work in the world.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=Frank+Ruhl+Libre:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#1B2A4A; --navy-deep:#0F1A2E;
-  --gold:#C9A84C; --gold-deep:#B0902F; --gold-light:#E0C572;
-  --coral:#E8734A; --cream:#FBF8F1;
-  --text-dark:#2C3E50; --text-mid:#5A6B7D; --text-light:#8A95A5;
-  --peach:#FEF0E8;
+  --navy:#1B2A4A; --azure:#598AC1; --coral:#E8734A; --cream:#FBF8F1;
+  --coral-deep:#D4622F; --azure-soft:rgba(89,138,193,.14);
+  --text-mid:#5A6B7D; --text-light:#8A95A5; --line:rgba(27,42,74,.12);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-html,body{height:100%;}
-body{
-  font-family:'DM Sans',sans-serif; color:var(--text-mid);
-  background:linear-gradient(168deg, #FBF8F1 0%, #FFFFFF 52%, #FEF0E8 100%);
-  -webkit-font-smoothing:antialiased; overflow:hidden;
-}
-a,button{cursor:pointer;}
-::selection{background:rgba(201,168,76,0.25);color:var(--navy);}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;color:var(--text-mid);background:var(--cream);-webkit-font-smoothing:antialiased;}
+a{color:var(--azure);text-decoration:none;}
+::selection{background:rgba(89,138,193,.25);color:var(--navy);}
+.wrap{max-width:880px;margin:0 auto;padding:0 26px;}
 
-/* ── stage ── */
-.stage{position:fixed; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; overflow:hidden;}
-.ambient{
-  position:absolute; inset:0; pointer-events:none;
-  background:
-    radial-gradient(ellipse 720px 470px at 16% 22%, rgba(201,168,76,0.18) 0%, transparent 62%),
-    radial-gradient(ellipse 560px 560px at 84% 80%, rgba(232,115,74,0.12) 0%, transparent 62%),
-    radial-gradient(ellipse 900px 380px at 50% 48%, rgba(201,168,76,0.06) 0%, transparent 72%);
-  animation:drift 24s ease-in-out infinite;
-}
-.vignette{position:absolute; inset:0; pointer-events:none;
-  background:radial-gradient(ellipse 76% 72% at 50% 44%, transparent 58%, rgba(27,42,74,0.07) 100%);}
-.particles{position:absolute; inset:0; pointer-events:none; z-index:1;}
-.p{position:absolute; border-radius:50%; background:var(--gold); bottom:0; opacity:0; box-shadow:0 0 6px rgba(201,168,76,0.55);}
+/* nav */
+nav{display:flex;align-items:center;justify-content:space-between;padding:26px 0;}
+.brand{display:flex;align-items:center;gap:10px;}
+.brand img{height:32px;width:auto;}
+.brand span{font-family:'Comfortaa',sans-serif;font-size:15.5px;font-weight:700;color:var(--navy);letter-spacing:.2px;}
+.navlinks{display:flex;gap:22px;font-size:13.5px;font-weight:600;}
+.navlinks a{color:var(--text-mid);transition:color .2s;}
+.navlinks a:hover{color:var(--coral);}
+@media(max-width:560px){.navlinks{display:none;}}
 
-/* ── card ── */
-.card{
-  position:relative; z-index:2;
-  width:min(620px, calc(100vw - 44px));
-  max-height:calc(100vh - 130px); overflow-y:auto;
-  background:rgba(255,255,255,0.72);
-  border:1px solid rgba(201,168,76,0.3);
-  border-radius:20px; padding:52px 48px 44px;
-  backdrop-filter:blur(12px);
-  box-shadow:0 30px 80px rgba(27,42,74,0.13), 0 4px 16px rgba(27,42,74,0.05), inset 0 1px 0 rgba(255,255,255,0.7);
-  transition:opacity .34s ease, transform .34s ease;
-}
-.card::-webkit-scrollbar{width:4px;}
-.card::-webkit-scrollbar-thumb{background:rgba(201,168,76,0.3);border-radius:2px;}
-.card.out{opacity:0; transform:translateY(14px);}
+/* hero */
+.hero{padding:72px 0 64px;}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--azure);margin-bottom:20px;}
+h1{font-family:'Comfortaa',sans-serif;font-weight:700;font-size:clamp(34px,6.4vw,54px);line-height:1.16;color:var(--navy);letter-spacing:-.01em;margin-bottom:18px;}
+.hero .sub{font-size:clamp(17px,2.6vw,20px);color:var(--text-mid);font-weight:400;margin-bottom:26px;max-width:56ch;line-height:1.6;}
+.hero .body{font-size:16.5px;line-height:1.9;max-width:62ch;margin-bottom:8px;}
+.hero .body strong{color:var(--navy);font-weight:600;}
+.ctarow{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+.btn{display:inline-block;background:var(--coral);color:#fff;border-radius:100px;padding:14px 28px;font-size:15px;font-weight:700;box-shadow:0 6px 20px rgba(232,115,74,.28);transition:background .2s,transform .2s;}
+.btn:hover{background:var(--coral-deep);transform:translateY(-1px);}
+.btn.ghost{background:transparent;color:var(--navy);border:1.5px solid var(--line);box-shadow:none;}
+.btn.ghost:hover{border-color:var(--azure);color:var(--azure);background:var(--azure-soft);}
+.micro{font-size:12.5px;color:var(--text-light);margin-top:18px;line-height:1.7;}
 
-.star{font-size:22px; color:var(--gold); display:block; margin-bottom:22px;
-  animation:glow 3.8s ease-in-out infinite; text-shadow:0 0 22px rgba(201,168,76,0.5);}
-.brand{display:flex; align-items:center; justify-content:flex-start; gap:11px; margin-bottom:18px;}
-.brand-dove{height:34px; width:auto; display:inline-block; filter:drop-shadow(0 0 10px rgba(201,168,76,0.4));}
-.brand-word{font-family:'Playfair Display',serif; font-size:18px; font-weight:600; color:var(--navy); letter-spacing:.2px;}
-.hashtag{font-size:12.5px; font-weight:700; letter-spacing:.07em; color:var(--gold-deep); margin-bottom:14px;}
-.steplabel{font-size:11px; font-weight:500; letter-spacing:.2em; text-transform:uppercase; color:var(--text-light); margin-bottom:18px;}
-.eyebrow{font-size:11px; font-weight:600; letter-spacing:.28em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:14px;}
-.headline{
-  font-family:'Playfair Display',serif; font-weight:400;
-  font-size:clamp(24px, 4.4vw, 33px); line-height:1.32; color:var(--navy);
-  letter-spacing:-0.01em; margin-bottom:20px;
-}
-.headline em{font-style:italic; color:var(--coral);}
-.body{font-size:clamp(15px,2.4vw,16.5px); font-weight:400; line-height:1.85; color:var(--text-mid);}
-.body strong{color:var(--navy); font-weight:600;}
-.body + .body{margin-top:14px;}
+/* strip */
+.strip{background:var(--navy);padding:44px 0;margin:26px 0 0;}
+.strip .line{font-family:'Comfortaa',sans-serif;font-weight:600;font-size:clamp(20px,3.8vw,30px);color:var(--cream);text-align:center;line-height:1.5;}
+.strip .line em{font-style:normal;color:var(--coral);}
+.strip .note{text-align:center;font-size:13px;color:rgba(251,248,241,.66);margin-top:14px;line-height:1.7;padding:0 20px;}
+.strip .note a{color:rgba(251,248,241,.9);border-bottom:1px solid rgba(251,248,241,.35);}
 
-.names{display:flex; gap:10px; margin-top:22px; flex-wrap:wrap;}
-.name-chip{font-size:13px; color:var(--navy); padding:7px 16px; border:1px solid rgba(201,168,76,0.4);
-  border-radius:100px; background:rgba(201,168,76,0.08);}
+/* sections */
+section{padding:76px 0 8px;}
+.label{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--azure);margin-bottom:12px;display:block;}
+h2{font-family:'Comfortaa',sans-serif;font-weight:700;font-size:clamp(24px,4vw,33px);color:var(--navy);line-height:1.3;margin-bottom:18px;letter-spacing:-.005em;}
+section p{font-size:16px;line-height:1.9;max-width:66ch;margin-bottom:16px;}
+section p strong{color:var(--navy);font-weight:600;}
+.lbl{font-family:'Comfortaa',sans-serif;font-size:13px;font-weight:700;color:var(--navy);margin-right:10px;}
+.step{border-left:3px solid var(--azure);padding:2px 0 2px 20px;margin:20px 0;}
+.step p{margin-bottom:0;}
 
-/* ── scripture verse ── */
-.verse{margin-top:30px; padding-top:26px; border-top:1px solid rgba(201,168,76,0.28); text-align:center;}
-.verse-he{font-family:'Frank Ruhl Libre',serif; direction:rtl; font-weight:500;
-  font-size:clamp(17px,2.7vw,21px); line-height:1.95; color:var(--navy);}
-.verse-en{font-family:'Playfair Display',serif; font-style:italic; font-size:14px;
-  color:var(--text-mid); line-height:1.65; margin-top:14px;}
-.verse-cite{font-size:10.5px; letter-spacing:.2em; text-transform:uppercase;
-  color:var(--gold-deep); margin-top:11px; font-family:'DM Sans',sans-serif;}
-.cnote{font-size:12.5px; color:var(--text-light); margin:0 0 18px; line-height:1.6;}
+/* proof card */
+.ba{border:1px solid var(--line);border-radius:14px;background:#fff;max-width:66ch;margin:22px 0;}
+.bar{display:flex;gap:16px;padding:13px 18px;border-top:1px solid var(--line);font-size:14.5px;align-items:baseline;}
+.bar:first-child{border-top:none;}
+.bak{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--azure);min-width:76px;flex-shrink:0;}
+.bar span:last-child{color:var(--navy);}
+.quote{font-size:16.5px;font-style:italic;color:var(--navy);border-left:3px solid var(--coral);padding-left:18px;margin:24px 0 8px;line-height:1.75;max-width:60ch;}
+.quote .cite{display:block;font-style:normal;font-size:12.5px;color:var(--text-light);margin-top:8px;letter-spacing:.06em;}
 
-/* ── proof slide: accordion + before/after + share ── */
-.hint{font-size:13px; color:var(--text-light); margin:2px 0 22px; line-height:1.5;}
-.acc{display:flex; flex-direction:column; gap:13px;}
-.acc-item{border:1px solid rgba(201,168,76,0.28); border-left:3px solid var(--gold);
-  border-radius:13px; background:rgba(201,168,76,0.05); overflow:hidden; transition:background .25s;}
-.acc-item.open{background:rgba(201,168,76,0.07);}
-.acc-head{display:flex; align-items:center; gap:14px; padding:16px 18px; cursor:pointer;}
-.acc-head:hover{background:rgba(201,168,76,0.06);}
-.acc-textwrap{flex:1;}
-.acc-name{font-family:'Playfair Display',serif; font-size:19px; font-weight:600; color:var(--navy);}
-.acc-teaser{font-size:12.5px; color:var(--text-mid); margin-top:3px; line-height:1.45;}
-.acc-plus{width:30px; height:30px; flex-shrink:0; border-radius:50%; border:1px solid rgba(201,168,76,0.45);
-  display:flex; align-items:center; justify-content:center; color:var(--gold-deep); font-size:20px; line-height:1;
-  transition:transform .35s ease, background .25s, color .25s, border-color .25s;}
-.acc-item.open .acc-plus{transform:rotate(45deg); background:var(--gold); color:#fff; border-color:var(--gold);}
-.acc-body{max-height:0; opacity:0; overflow:hidden; padding:0 18px;
-  transition:max-height .5s ease, opacity .4s ease, padding .4s ease;}
-.acc-item.open .acc-body{max-height:1600px; opacity:1; padding:2px 18px 18px;}
-.acc-body p{font-size:14.5px; line-height:1.78; color:var(--text-mid); margin-bottom:12px;}
-.acc-body p.punch{color:var(--navy); font-weight:500;}
-.acc-quote{font-family:'Playfair Display',serif; font-style:italic; font-size:15px; color:var(--navy);
-  border-left:2px solid var(--gold); padding-left:15px; margin:16px 0; line-height:1.6;}
-.ba{background:rgba(255,255,255,0.62); border:1px solid rgba(201,168,76,0.22); border-radius:12px;
-  padding:6px 16px; margin-top:16px;}
-.ba-row{display:flex; gap:14px; padding:11px 0; align-items:baseline;}
-.ba-row + .ba-row{border-top:1px solid rgba(27,42,74,0.07);}
-.ba-k{font-size:10.5px; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
-  color:var(--gold-deep); min-width:64px; flex-shrink:0;}
-.ba-v{font-size:14px; color:var(--navy); line-height:1.5;}
-.share{margin-top:28px; padding-top:24px; border-top:1px solid rgba(201,168,76,0.28);}
-.share-k{font-size:11px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:14px;}
-.share p{font-size:14.5px; line-height:1.78; color:var(--text-mid); margin-bottom:12px;}
-.share .key{font-family:'Playfair Display',serif; font-style:italic; color:var(--navy); font-size:16.5px; line-height:1.5;}
+/* doors */
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px;}
+@media(max-width:720px){.doors{grid-template-columns:1fr;}}
+.door{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px 28px;}
+.door h3{font-family:'Comfortaa',sans-serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:12px;}
+.door p{font-size:14.5px;line-height:1.8;margin-bottom:14px;}
+.door .btn{padding:11px 22px;font-size:13.5px;margin:4px 8px 4px 0;}
 
-/* ── nav ── */
-.nav{display:flex; align-items:center; gap:12px; margin-top:34px;}
-.next{background:var(--gold); color:var(--navy); border:none; border-radius:100px;
-  padding:13px 36px; font-size:14px; font-weight:700; letter-spacing:.3px; font-family:'DM Sans',sans-serif;
-  margin-left:auto; box-shadow:0 6px 22px rgba(201,168,76,0.32); transition:transform .2s, box-shadow .2s, background .2s, color .2s;}
-.next:hover{transform:translateY(-1px); background:var(--gold-deep); color:#fff; box-shadow:0 8px 28px rgba(201,168,76,0.4);}
-.back{background:none; border:1px solid rgba(201,168,76,0.35); border-radius:100px; color:var(--gold-deep);
-  width:42px; height:42px; font-size:17px; display:flex; align-items:center; justify-content:center; transition:.2s;}
-.back:hover{border-color:var(--gold); background:rgba(201,168,76,0.08);}
+/* story */
+.story{background:linear-gradient(180deg,rgba(89,138,193,.07),rgba(232,115,74,.06));border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:70px;padding:76px 0 60px;}
+.story p{font-size:17px;line-height:1.95;color:var(--text-mid);}
+.story .close{font-family:'Comfortaa',sans-serif;font-weight:600;color:var(--navy);font-size:18px;line-height:1.7;max-width:58ch;}
 
-/* ── film slide ── */
-.film-still{position:relative; border-radius:14px; overflow:hidden; aspect-ratio:16/9; margin:8px 0 26px;
-  background:linear-gradient(135deg,#243a5e,#0f1a2e); display:flex; align-items:center; justify-content:center;
-  box-shadow:0 14px 40px rgba(27,42,74,0.22);}
-.film-still::after{content:'REDEMPTION · A SHORT FILM · 12 MIN'; position:absolute; bottom:13px; left:0; right:0;
-  text-align:center; font-size:10px; letter-spacing:2.4px; color:var(--navy); z-index:1;}
-.play{width:70px; height:70px; border-radius:50%; background:rgba(201,168,76,0.96); display:flex;
-  align-items:center; justify-content:center; box-shadow:0 8px 30px rgba(201,168,76,0.45); position:relative; z-index:1;}
-.optin{display:flex; gap:10px; margin-top:4px;}
-.optin input{flex:1; padding:14px 18px; border-radius:100px; border:1px solid rgba(27,42,74,0.16);
-  background:rgba(27,42,74,0.03); color:var(--navy); font-family:'DM Sans',sans-serif; font-size:15px;}
-.optin input::placeholder{color:var(--text-light);}
-.optin input:focus{outline:none; border-color:var(--gold);}
-.optin button{background:var(--coral); color:#fff; border:none; border-radius:100px; padding:14px 26px;
-  font-weight:700; font-size:15px; white-space:nowrap; font-family:'DM Sans',sans-serif; transition:.2s;
-  box-shadow:0 6px 20px rgba(232,115,74,0.3);}
-.optin button:hover{background:#D4622F;}
-.optin-note{font-size:12px; color:var(--text-light); margin-top:14px;}
-.done-text{display:block;}
-.optin-link{display:inline-block; margin-top:12px; font-size:14px; font-weight:600; color:var(--gold-deep); text-decoration:none; border-bottom:1px solid rgba(176,144,47,0.45); padding-bottom:2px;}
-.optin-link:hover{color:var(--coral); border-color:var(--coral);}
-.optin-done{display:none; color:var(--navy); font-size:16px; padding:8px 0; font-weight:500;}
-.optin-done.show{display:block;}
-.give{margin-top:24px; font-size:14px; color:var(--text-mid);}
-.give a{color:var(--coral); text-decoration:none; border-bottom:1px solid rgba(232,115,74,0.4); padding-bottom:1px;}
+/* footer cta + footer */
+.final{padding:80px 0 30px;text-align:center;}
+.final h2{margin-bottom:14px;}
+.final p{margin:0 auto 10px;max-width:56ch;}
+footer{padding:40px 0 56px;border-top:1px solid var(--line);margin-top:56px;font-size:12.5px;color:var(--text-light);line-height:1.9;}
+footer .fbrand{display:flex;align-items:center;gap:9px;margin-bottom:14px;}
+footer .fbrand img{height:24px;}
+footer .fbrand span{font-family:'Comfortaa',sans-serif;font-weight:700;color:var(--navy);font-size:13.5px;}
+footer a{color:var(--text-mid);border-bottom:1px solid var(--line);}
+footer a:hover{color:var(--azure);}
 
-/* ── dots + crisis ── */
-.dots{position:fixed; bottom:56px; left:50%; transform:translateX(-50%); display:flex; gap:10px; z-index:5;}
-.dot{width:7px; height:7px; border-radius:50%; background:rgba(27,42,74,0.18); transition:all .35s ease;}
-.dot.active{background:var(--gold); transform:scale(1.35); box-shadow:0 0 10px rgba(201,168,76,0.5);}
-.crisis{position:fixed; bottom:20px; left:0; right:0; text-align:center; z-index:5;
-  font-size:11px; color:var(--text-light); padding:0 20px;}
-.crisis b{color:var(--text-mid);}
+/* guide form */
+.gform{display:flex;gap:10px;max-width:520px;margin-top:6px;}
+.gform input[type=email]{flex:1;padding:14px 18px;border-radius:100px;border:1.5px solid var(--line);background:#fff;color:var(--navy);font-family:'DM Sans',sans-serif;font-size:15px;min-width:0;}
+.gform input[type=email]:focus{outline:none;border-color:var(--azure);}
+.gform button{background:var(--coral);color:#fff;border:none;border-radius:100px;padding:14px 26px;font-weight:700;font-size:15px;white-space:nowrap;font-family:'DM Sans',sans-serif;cursor:pointer;box-shadow:0 6px 20px rgba(232,115,74,.28);transition:background .2s;}
+.gform button:hover{background:var(--coral-deep);}
+.gdone{display:none;color:var(--navy);font-size:16px;font-weight:600;padding:10px 0;}
+@media(max-width:520px){.gform{flex-direction:column;}}
 
-@keyframes drift{0%{transform:translate(0,0)}33%{transform:translate(24px,-16px)}66%{transform:translate(-16px,12px)}100%{transform:translate(0,0)}}
-@keyframes glow{0%,100%{opacity:.55; transform:scale(1)}50%{opacity:1; transform:scale(1.16)}}
-@keyframes rise{0%{opacity:0; transform:translateY(0) scale(.5)}14%{opacity:.7; transform:translateY(-12vh) scale(1)}80%{opacity:.35}100%{opacity:0; transform:translateY(-100vh) scale(.3)}}
-@keyframes fadeIn{from{opacity:0; transform:translateY(16px)}to{opacity:1; transform:translateY(0)}}
-.card{animation:fadeIn .55s ease;}
+/* returning visitor bar */
+.resume{display:none;position:sticky;top:0;z-index:50;background:var(--navy);color:var(--cream);align-items:center;gap:14px;padding:11px 18px;font-size:13.5px;}
+.resume .rlabel{flex:1;line-height:1.5;}
+.resume .rgo{background:var(--coral);color:#fff;border-radius:100px;padding:8px 16px;font-weight:700;font-size:12.5px;white-space:nowrap;}
+.resume .rx{background:none;border:none;color:rgba(251,248,241,.7);font-size:18px;cursor:pointer;line-height:1;}
 
-@media(max-width:600px){ .card{padding:40px 26px 34px;} .dots{bottom:48px;} }
+/* sponsor whisper */
+.whisper{font-size:12px;color:var(--text-light);margin-top:26px;}
+.whisper a{color:var(--text-light);border-bottom:1px solid var(--line);}
+
+/* parent path */
+.teachgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;margin-top:10px;}
+@media(max-width:680px){.teachgrid{grid-template-columns:1fr;}}
+.teach{padding:16px 0 14px;border-top:1px solid var(--line);}
+.teach h3{font-family:'Comfortaa',sans-serif;font-size:14.5px;font-weight:700;color:var(--navy);margin-bottom:7px;}
+.teach p{font-size:14px;line-height:1.75;margin-bottom:0;max-width:none;}
+.teach strong{color:var(--navy);font-weight:600;}
+.mirror{background:var(--azure-soft);border-radius:16px;padding:26px 28px;margin-top:32px;}
+.mirror h3{font-family:'Comfortaa',sans-serif;font-size:17px;color:var(--navy);margin-bottom:10px;}
+.mirror .close{font-family:'Comfortaa',sans-serif;font-weight:600;color:var(--navy);font-size:16.5px;margin-bottom:0;}
+
+/* screenshot placeholders */
+.shot{border:1.5px dashed rgba(89,138,193,.5);background:var(--azure-soft);border-radius:12px;padding:34px 20px;text-align:center;font-size:12.5px;letter-spacing:.08em;color:var(--azure);margin:14px 0 22px;max-width:66ch;}
+
+/* report screenshots (side by side) */
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:14px 0 22px;max-width:66ch;}
+@media(max-width:640px){.shots{grid-template-columns:1fr;}}
+.shots figure{margin:0;border:1px solid var(--line);border-radius:12px;background:#fff;overflow:hidden;box-shadow:0 6px 20px rgba(27,42,74,.06);}
+.shots img{display:block;width:100%;height:300px;object-fit:cover;object-position:top;}
+.ba figure img,figure.ba img{display:block;width:100%;height:300px;object-fit:cover;object-position:top;}
+.shots.three{grid-template-columns:1fr 1fr 1fr;max-width:none;}
+@media(max-width:720px){.shots.three{grid-template-columns:1fr 1fr;}}
+@media(max-width:460px){.shots.three{grid-template-columns:1fr;}}
+
+/* sponsor band */
+.sponsor{background:var(--navy);padding:64px 0;margin-top:76px;}
+.sponsor .label{color:var(--azure);}
+.sponsor h2{color:var(--cream);}
+.sponsor p{color:rgba(251,248,241,.85);font-size:15px;max-width:68ch;}
+.sponsor .btn{margin-top:8px;}
 </style>
 </head>
 <body>
@@ -186,212 +157,289 @@ a,button{cursor:pointer;}
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9NZLKM9"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<div class="stage">
-  <div class="ambient"></div>
-  <div class="vignette"></div>
-  <div class="particles" id="particles"></div>
 
-  <div class="card" id="card"></div>
-  <iframe name="bd-sink" title="subscribe" aria-hidden="true" style="position:absolute;width:0;height:0;border:0;visibility:hidden"></iframe>
+<div class="resume" id="resume">
+  <span class="rlabel"></span>
+  <a class="rgo" href="/problem">Continue →</a>
+  <button class="rx" onclick="this.parentNode.style.display='none'" aria-label="Dismiss">×</button>
+</div>
 
-  <div class="dots" id="dots"></div>
-  <div class="crisis">In crisis? In the U.S. call or text <b>988</b> · worldwide <b>findahelpline.com</b></div>
+<div class="wrap">
+<nav>
+  <div class="brand">
+    <img src="public/logo-wordmark.png" alt="Covenant of Education">
+  </div>
+  <div class="navlinks">
+    <a href="/guide" data-step="resources">Resources</a>
+    <a href="/problem" data-step="problem">The Problem</a>
+    <a href="#guide">Get the Guide</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<header class="hero">
+  <div class="eyebrow">Bespoke Mentorship for Gifted Outliers</div>
+  <h1>Mentoring brilliant outliers.</h1>
+  <p class="sub">Bespoke mentorship for gifted kids who don't fit the system.</p>
+  <p class="body">Here is how it works. <strong>You go first:</strong> a short mentorship in the 7 Teachings, so you can hand your child acceptance instead of anxiety. <strong>Then your child meets a mentor who was once exactly like them,</strong> and sees, in a real person, where their own story can go. They learn they are enough.</p>
+  <div class="ctarow">
+    <a class="btn" href="/problem" data-step="problem">Does this sound like your child? →</a>
+    <a class="btn ghost" href="/guide" data-step="resources">Browse the parent resources →</a>
+  </div>
+  <p class="micro">Founded by Rabbi Dr. Izzy Kiver, EdD · In a hurry? <a href="#guide">Get the free guide →</a></p>
+</header>
+</div>
+
+<!-- ── STRIP ── -->
+<div class="strip">
+  <div class="wrap">
+    <div class="line">Not therapy. Not tutoring. <em>Mentorship.</em></div>
+    <p class="note">Your child isn't broken. They don't need fixing. They need to feel accepted, to be shown their gift, and to know the world needs them.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- ── PARENT PATH ── -->
+<section id="parents">
+  <span class="label">The Parent Path</span>
+  <h2>You go first.</h2>
+  <p>Before we ever sit with your child, we sit with you. A short mentorship in the 7 Teachings, taught parent to parent, because the person your child trusts most should be the first one carrying the message. Here is what each teaching gives you, and what you pass on.</p>
+  <div class="teachgrid">
+    <div class="teach"><h3>1 · Positive Mental Attitude</h3><p><strong>You learn:</strong> your child borrows their weather from you. Attitude arrives before advice does. <strong>You pass on:</strong> a home where a hard day is information, never a verdict.</p></div>
+    <div class="teach"><h3>2 · Purity of Thought</h3><p><strong>You learn:</strong> to hear your child without fear narrating over them. <strong>You pass on:</strong> the difference between what happened and the story they tell themselves about what happened.</p></div>
+    <div class="teach"><h3>3 · Vision</h3><p><strong>You learn:</strong> to speak about your child's future in pictures instead of warnings. <strong>You pass on:</strong> a future self specific enough to walk toward.</p></div>
+    <div class="teach"><h3>4 · Courage</h3><p><strong>You learn:</strong> when not to rescue. <strong>You pass on:</strong> the habit of attempting things slightly past the edge of what they believe they can do.</p></div>
+    <div class="teach"><h3>5 · Charisma</h3><p><strong>You learn:</strong> that what school calls too much is presence, unpolished. <strong>You pass on:</strong> how to enter a room as themselves and let people come closer.</p></div>
+    <div class="teach"><h3>6 · Sanctuary</h3><p><strong>You learn:</strong> to make one place in the world where your child never has to perform. <strong>You pass on:</strong> a nervous system that knows where home is.</p></div>
+    <div class="teach"><h3>7 · Rhythm</h3><p><strong>You learn:</strong> that gifted kids burn in sprints and recover in cycles. <strong>You pass on:</strong> a cadence they can keep for life, in study, in rest, in ambition.</p></div>
+  </div>
+  <div class="mirror">
+    <h3>Then, the mirror.</h3>
+    <p>When you are ready, your child meets a mentor with a unique similarity: the mentor was them at their age. Same obsessions, same friction with school, same feeling at ten years old of being the only one that's different. Except the mentor kept going, and your child gets to study what that became: the important work, the achievements, the life of abundance. For the first time, your child is not being told about their potential. They are looking at it in the mirror, standing in front of them, answering their questions.</p>
+    <p class="close">That is the moment it lands: they are enough.</p>
+  </div>
+  <p class="micro" style="margin-top:16px;">Your child's own mentorship follows a structured path of its own. That comes next.</p>
+</section>
+
+<!-- ── PROOF ── -->
+<section id="proof">
+  <span class="label">Proof</span>
+  <h2>Nobody saw it. Including him.</h2>
+  <p>Dimash was copy-pasting his way through school in Kazakhstan. Addicted to games, a divorced home, both relationships strained. His honest ceiling was a local community college.</p>
+  <p>He went through our full mentorship path. The assessment surfaced his gift: agentic software. We brought in a leading PhD in agentic RAG as his specialist mentor and helped him build his own platform, backed by Microsoft for Startups and Nvidia with over $50,000 in cloud credits. Alongside it came real client work, with a partner on the contracts, paying five times a local monthly salary.</p>
+  <p>That was the fuel. When university applications came, he refused help with his essays. He told his mother, "No one can say it better about me than I can myself." SAT 1540. He earned a full scholarship into CUHK's fiercely competitive financial engineering program.</p>
+  <div class="ba">
+    <div class="bar"><span class="bak">Before</span><span>Depressed, gaming, a community college horizon.</span></div>
+    <div class="bar"><span class="bak">During</span><span>Gift surfaced: agentic software. A leading PhD in agentic RAG as mentor. Microsoft and Nvidia backing with $50,000+ in cloud credits. Paid client work at five times a local salary.</span></div>
+    <div class="bar"><span class="bak">After</span><span>Full scholarship, CUHK financial engineering. A quantitative finance career underway.</span></div>
+    <div class="bar"><span class="bak">Impact</span><span>Eighteen months, first session to acceptance letter. His work now pays, ships, and serves real clients.</span></div>
+  </div>
+  <p class="quote">"Without Izzy, he would have been lost. He would never have uncovered his true talent or seen himself for what he is capable of."<span class="cite">HIS MOTHER</span></p>
+</section>
+
+<!-- ── MENTORSHIP PATH ── -->
+<section id="path">
+  <span class="label">The Mentorship Path</span>
+  <h2>Your child's bespoke mentorship, step by step.</h2>
+  <div class="step"><p><span class="lbl">Evaluate</span>Your child's strengths are mapped through a psychometric evaluation and a PCI score, so the plan is built on evidence, not guesses.</p></div>
+  <div class="shots">
+    <figure><img src="public/psychometric-report.png" alt="Psychometric evaluation report: average score, statistics, and per-question ranking" loading="lazy"></figure>
+    <figure><img src="public/pci-report.png" alt="PCI assessment: reflective questions surfacing the child's inner picture" loading="lazy"></figure>
+  </div>
+  <div class="step"><p><span class="lbl">Plan</span>We sit with you and design the mentorship plan around what the assessment surfaced.</p></div>
+  <figure class="ba" style="margin-top:0;overflow:hidden;"><img src="public/plan-assessment-and-journey.png" alt="The mentorship plan: what the assessment surfaced, chosen priorities, and the suggested 12-week journey" loading="lazy" style="display:block;width:100%;height:300px;object-fit:cover;object-position:top;"></figure>
+  <div class="step"><p><span class="lbl">Immerse</span>The goal is set during an immersive opening period with Izzy in the 7 Teachings, Reality Hack edition, in your child's language of choice: English, Russian, or Portuguese.</p></div>
+  <div class="shots">
+    <figure><img src="public/immerse-dashboard.png" alt="Immerse dashboard: teachings progress, immersion time, check-ins, and the child's current goal" loading="lazy"></figure>
+    <figure><img src="public/immerse-teachings.png" alt="The 7 Teachings immersion progress: emotional landscape and which teaching is in session" loading="lazy"></figure>
+  </div>
+  <div class="step"><p><span class="lbl">See Everything</span>Every session is recorded in Read AI and shared with you through an interactive dashboard, with the full report available whenever you want to go deeper. Nothing about your child's mentorship happens out of your sight.</p></div>
+  <figure class="ba" style="margin-top:0;overflow:hidden;"><img src="public/session-dashboard-report.jpg" alt="Read AI session dashboard: meeting score, engagement, sentiment, summary, and action items" loading="lazy" style="display:block;width:100%;height:300px;object-fit:cover;object-position:top;"></figure>
+  <div class="step"><p><span class="lbl">Specialists</span>As your child's interests sharpen, specialized mentors are brought in to match them: working experts in the exact field of the gift.</p></div>
+  <div class="shots">
+    <figure><img src="public/specialist-mentor-profile.png" alt="Specialist mentor profile matched to the child's gift: background, focus areas, and rating" loading="lazy"></figure>
+    <figure><img src="public/specialist-mentor-reviews.png" alt="Reviews from mentees describing their mentorship experience and results" loading="lazy"></figure>
+  </div>
+  <div class="step"><p><span class="lbl">Atoms</span>Throughout, the mentor captures atoms of clarity and capability: the small, dated moments of transformation that mark your child's development journey.</p></div>
+  <div class="shots three">
+    <figure><img src="public/atom-log-dashboard.jpg" alt="Atom Log journal dashboard: streak, frequent emotions, atoms logged, and emotional landscape" loading="lazy"></figure>
+    <figure><img src="public/atom-log-form.jpg" alt="Log Atom form: who experienced the shift, what shifted, teaching and category tags" loading="lazy"></figure>
+    <figure><img src="public/atom-log-feed.jpg" alt="My Atoms feed: a logged moment of clarity shared by the mentor" loading="lazy"></figure>
+  </div>
+</section>
+
+<!-- ── THE GUIDE ── -->
+<section id="guide">
+  <span class="label">The Free Guide</span>
+  <h2>Empowering Prodigious Children.</h2>
+  <p>A mentorship blueprint for parents: how to see your child honestly, how to talk with them about what they are going through, and how to set the first small challenge yourself. A five minute read. Free.</p>
+  <!--
+    Submits to our own Cloudflare Worker at /api/subscribe (the "coe-subscribe"
+    Worker on the coveofedu.org/api/subscribe route) — same first-party pattern
+    as /problem. The Worker calls Buttondown's authenticated API (no Turnstile
+    wall), creates the subscriber, and tags by "source". The "website" field is
+    a honeypot: hidden from people, filled by bots — the Worker ignores those.
+    NOTE: confirm the Worker maps source "home_guide" to a tag, or change source.
+  -->
+  <form class="gform" id="gform" novalidate onsubmit="return guideSubmit(event)">
+    <div style="position:absolute;left:-9999px;" aria-hidden="true">
+      <label>Leave this field empty<input type="text" id="gwebsite" name="website" tabindex="-1" autocomplete="off"></label>
+    </div>
+    <input type="email" id="gemail" name="email" placeholder="your@email.com" aria-label="Email" required>
+    <button type="submit" id="gsubmit">Send me the guide →</button>
+  </form>
+  <div class="gdone" id="gdone">✓ Check your inbox. The guide is on its way.</div>
+  <p class="micro" id="gerr" role="alert" hidden style="color:var(--coral-deep);">Something went wrong. Please try again.</p>
+  <p class="micro">No spam. The guide, then a story or two from the movement.</p>
+  <p class="micro">Do you want to understand the problem better? <a href="/problem" data-step="problem">Read the problem →</a></p>
+</section>
+</div>
+
+<!-- ── STORY ── -->
+<div class="story">
+  <div class="wrap">
+    <span class="label">Why This Exists</span>
+    <h2>A note from Izzy.</h2>
+    <p>My brother Tolik was thirty-one years old when he took his life. He'd spent the last decade of his life managing a brain injury that would have given most people permission to quit everything: to quit caring, to quit showing up. The headaches alone were agonizing. I watched him grip a kitchen counter once until his knuckles went white, and when I asked what was wrong, he smiled and said he was just thinking about dinner.</p>
+    <p>That was Tolik. The man could be drowning and he'd still ask if you needed a glass of water. Losing him was the deepest pain I've ever experienced.</p>
+    <p>I sat with that grief for a decade, a timeline that mirrored his own battle with his injury. My epiphany finally came when I saw a fly throwing its entire being against a pane of glass. Thud. Thud. Thud. It could see the trees. It could see the sky. Freedom was right there, but it was killing itself trying to reach it. The open door was only six inches away.</p>
+    <p>I realized we were both that fly, slamming into invisible walls. The exit existed, but we just couldn't step far enough back to see it.</p>
+    <p>No one had ever given either of us that distance. That perspective. The ability to look at your own life from far enough away to see the door instead of the glass.</p>
+    <p>Except Tolik did give that to me. He just couldn't give it to himself.</p>
+    <p class="close">We exist to carry his love forward, so no other child needs to live with that pain and that trapped feeling. We are here to continue my brother's love into the world, exactly as he would have wanted.</p>
+    <p class="micro">Rabbi Dr. Izzy Kiver, EdD · Founder</p>
+  </div>
+</div>
+
+<div class="wrap">
+<!-- ── FINAL CTA ── -->
+<section class="final">
+  <h2>See the problem the way we see it.</h2>
+  <p>Give it five minutes, and it will read like a conversation at your own kitchen table. If it doesn't sound like your child, close the tab with our respect.</p>
+  <div class="ctarow" style="justify-content:center;">
+    <a class="btn" href="/problem" data-step="problem">Read the problem →</a>
+    <a class="btn ghost" href="#guide">Or get the guide now →</a>
+  </div>
+</section>
+</div>
+
+<!-- ── SPONSORS ── -->
+<div class="sponsor">
+  <div class="wrap">
+    <span class="label">For Sponsors</span>
+    <h2>Are you a youth development sponsor?</h2>
+    <p>We don't only work with parents. Our work extends to outstanding members of society who want to continue their influence through a gifted child that can grow up to be a success like them. We find the talent: gifted kids surfaced by parents, teachers, rabbis, and community leaders, then screened through psychometric evaluation and a PCI score before a single session is booked. We cultivate the child's gift with specialists in the child's own field: working experts and PhDs matched to the gift. And we put it to work in the world: real projects, real clients, real stakes. Twelve months, one child at a time, in English, Portuguese, and Russian. Thirty one cohorts in, 95 percent of our students finish.</p>
+    <p>The graduate you read about on this page left with backing from Microsoft and Nvidia, a paid contract, and a full four year scholarship. A sponsorship year develops a future global leader who shares your values and vision for the world.</p>
+    <a class="btn" href="/talent">See how talent sponsorship works →</a>
+  </div>
+</div>
+
+<div class="wrap">
+<footer>
+  <div class="fbrand">
+    <span>Covenant of Education</span>
+  </div>
+  <p>A 501(c)(3) nonprofit, EIN 92-2455469 · Tampa, Florida and Santa Catarina, Brazil · Programs in English, Portuguese, and Russian.</p>
+  <p>For the rabbi, principal, counselor, or coach who was sent this link and has questions: <a href="/mentoring">talk to Izzy directly</a>, before a family commits a dollar. We work alongside psychologists and schools, never instead of them.</p>
+  <p>If you or your child is struggling: in the U.S., call or text 988. Worldwide, visit findahelpline.com.</p>
+</footer>
 </div>
 
 <script>
-const SLIDES = [
-  {
-    headline:"You can see it in your child. They <em>can't</em> — yet.",
-    body:["You've tried the therapy, the tutoring, the talks. And you can still see the thing in them they can't see in themselves. That gap is the most painful distance a parent ever measures."]
-  },
-  {
-    headline:"Your child isn't broken.",
-    body:["But a bright kid can still disappear — quietly, into a screen, a closed door, a silence no report card will ever catch.",
-          "<strong>They don't need to be fixed. They need to be shown</strong> — the thing inside them everyone else can see but they can't."]
-  },
-  {
-    eyebrow:"How we make it better",
-    headline:"We don't tell your child what to think. We hand them <em>perspective</em>.",
-    body:["Every institution in their life already tells them who to be. We do the opposite.",
-          "We help your child see themselves from an angle of love instead of fear — until they know, in their bones, that <strong>they are enough</strong>."]
-  },
-  {
-    eyebrow:"Proof it works",
-    headline:"They couldn't see it. Neither could anyone else.",
-    extra:`<p class="hint">Tap a name to read the whole story.</p>
+// ── Journey memory ──
+// First-party, no consent-tier data, readable by GTM. Set AUTO_RESUME to true
+// to hard-redirect returning organic visitors. It never fires for ad traffic:
+// redirecting a gclid click away from its landing page risks the Grant and
+// wastes paid intent. The banner is the default for a reason.
+var AUTO_RESUME = false;
+(function(){
+  var q = new URLSearchParams(location.search);
+  var fromAd = q.has('gclid') || q.has('utm_source');
+  var K = 'coeJourney', j = {};
+  try{ j = JSON.parse(localStorage.getItem(K) || '{}'); }catch(e){}
+  j.visits = (j.visits || 0) + 1;
+  j.lastSeen = Date.now();
+  j.lastStep = j.lastStep || 'home';
+  try{ localStorage.setItem(K, JSON.stringify(j)); }catch(e){}
 
-    <div class="acc">
+  // record the step a visitor leaves toward
+  document.querySelectorAll('[data-step]').forEach(function(a){
+    a.addEventListener('click', function(){
+      j.lastStep = a.getAttribute('data-step');
+      try{ localStorage.setItem(K, JSON.stringify(j)); }catch(e){}
+    });
+  });
 
-      <!-- ELLY -->
-      <div class="acc-item" id="elly">
-        <div class="acc-head" onclick="toggle('elly')">
-          <div class="acc-textwrap">
-            <div class="acc-name">Elly</div>
-            <div class="acc-teaser">Jobless and weeks from eviction → director, developer, award nominee — in six months.</div>
-          </div>
-          <div class="acc-plus">+</div>
-        </div>
-        <div class="acc-body">
-          <p>Elly was jobless and nearly out of money, communicating through a broken laptop on WhatsApp because she couldn't afford a phone. She was looking for work as a minimum-wage nanny, and weeks from being evicted for unpaid rent.</p>
-          <p class="punch">Within 10 weeks of structured mentorship through the 7 Teachings, she directed and produced her first documentary. Shot in 6K. Hired her own videographers. Rented equipment she'd never touched. Edited on software she'd never opened.</p>
-          <p>None of this was on her radar. Not dormant. Not buried. Nonexistent. She had never once imagined herself behind a camera.</p>
-          <p>What happened in between was a sequence of small challenges designed to surface capabilities she didn't know she had — editing in Descript, working with scripts, locations, lighting. Each one slightly past the edge of what she believed she could do. Each one proving the belief wrong.</p>
-          <p>Within six months she had built a coded media app for kids using Claude Code, found her own clients beyond nanny work, and was selected for a Brazilian voice-talent award.</p>
-          <div class="acc-quote">"If not for Izzy and the 7 Teachings, I wouldn't have found the confidence to try programming and build a product on my own."</div>
-          <div class="ba">
-            <div class="ba-row"><span class="ba-k">Before</span><span class="ba-v">Broken laptop. No phone. Searching for minimum-wage work.</span></div>
-            <div class="ba-row"><span class="ba-k">After</span><span class="ba-v">Director. Developer. Award nominee. Building her own client base.</span></div>
-            <div class="ba-row"><span class="ba-k">Timeline</span><span class="ba-v">Six months.</span></div>
-          </div>
-        </div>
-      </div>
+  if(j.visits > 1 && !fromAd){
+    var dest, label;
+    if(j.guideDone){ dest = '/home'; label = 'Welcome back. Your next step is the premiere. Reserve your seat.'; }
+    else if(j.lastStep === 'problem'){ dest = '#guide'; label = 'Welcome back. You read the problem. The guide is the next step.'; }
+    else if(j.lastStep === 'resources'){ dest = '/problem'; label = 'Welcome back. Ready for the heart of it?'; }
+    else { dest = '/problem'; label = 'Welcome back. Pick up where you left off.'; }
+    var b = document.getElementById('resume');
+    b.querySelector('.rgo').href = dest;
+    b.querySelector('.rlabel').textContent = label;
+    b.style.display = 'flex';
+    if(AUTO_RESUME && dest.charAt(0) !== '#'){ setTimeout(function(){ location.href = dest; }, 1500); }
+  }
+})();
 
-      <!-- DIMASH -->
-      <div class="acc-item" id="dimash">
-        <div class="acc-head" onclick="toggle('dimash')">
-          <div class="acc-textwrap">
-            <div class="acc-name">Dimash</div>
-            <div class="acc-teaser">Depressed and copy-pasting through school → full scholarship to a top-tier university.</div>
-          </div>
-          <div class="acc-plus">+</div>
-        </div>
-        <div class="acc-body">
-          <p>Dimash was depressed, copy-pasting his way through classes in Kazakhstan. Addicted to video games. Surrounded by classmates going nowhere. His parents were divorced, both relationships strained. He didn't believe he could get into any school beyond a small local community college — let alone earn a scholarship abroad. A full ride wasn't a stretch goal. It was unthinkable.</p>
-          <p class="punch">Rather than treating him as a student, Izzy brought him in as a working partner. Real client work for American tech companies. Negotiation rooms where he had to hold his own against professionals three times his age.</p>
-          <p>Within six months he was building his own software products. Not school projects — actual tools solving real problems for real users.</p>
-          <p>When it came time for university applications, he refused help with his essays. He told his mother: "No one can say it better about me than I can myself."</p>
-          <p>SAT: 1540. He applied to MIT, KAIST, and top programs in Hong Kong and Singapore — every essay written from genuine self-knowledge, not performance.</p>
-          <p>Twelve months after his last session with Izzy, he was accepted on a full scholarship to CUHK's financial-engineering program, one of the strongest in Asia. He's there now, on his way to becoming a quantitative trader.</p>
-          <div class="acc-quote">"Without Izzy, he would have been lost — he would never have uncovered his true talent or seen himself for what he is capable of." — his mother</div>
-          <div class="ba">
-            <div class="ba-row"><span class="ba-k">Before</span><span class="ba-v">Depressed. Copy-pasting through school. Couldn't imagine a future beyond his zip code.</span></div>
-            <div class="ba-row"><span class="ba-k">After</span><span class="ba-v">Full scholarship. Top-tier university. Building a career in quantitative finance.</span></div>
-            <div class="ba-row"><span class="ba-k">Timeline</span><span class="ba-v">Eighteen months, first session to acceptance letter.</span></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="share">
-      <div class="share-k">What both stories share</div>
-      <p>Neither Elly nor Dimash received therapy. Neither was "fixed."</p>
-      <p class="key">Self-acceptance was the door. Everything else walked through it.</p>
-      <p>Both were handed a structured framework for discovering capabilities that were already present — but invisible to them.</p>
-    </div>`
-  },
-  {
-    eyebrow:"Why this exists",
-    headline:"It begins with a letter that was never sent.",
-    body:["Before any of this, there were two brothers. One was failing, ready to give up. The other gave him everything he had — while quietly carrying a darkness no one could see.",
-          "What he asked for in return was almost nothing. A card in the mail. It was bought. It was written. It was never sent."]
-  },
-  {
-    headline:"That letter was never sent by our founder Izzy.",
-    body:["He didn't get to send it in time. So now he pays the love forward to the next kid that needs it — to the young people who have never once been told they are enough.",
-          "He calls it a covenant. We call it COE. Either way, it's just love, passed on."],
-    verse:{
-      he:"וָאֶעֱבֹר עָלַיִךְ וָאֶרְאֵךְ מִתְבּוֹסֶסֶת בְּדָמָיִךְ וָאֹמַר לָךְ בְּדָמַיִךְ חֲיִי וָאֹמַר לָךְ בְּדָמַיִךְ חֲיִי",
-      en:"And I passed by you, and saw you cast down in your blood, and I said to you: in your blood, live. And I said to you: in your blood, live.",
-      cite:"Ezekiel 16:6"
+function guideSubmit(ev){
+  if(ev) ev.preventDefault();
+  var e = document.getElementById('gemail');
+  var errEl = document.getElementById('gerr');
+  var btn = document.getElementById('gsubmit');
+  var hp = document.getElementById('gwebsite');
+  if(errEl) errEl.hidden = true;
+  var email = e.value.trim();
+  if(!email || email.indexOf('@') < 1){ e.focus(); return false; }
+  var original = btn.textContent;
+  btn.disabled = true; btn.textContent = 'Sending…';
+  fetch('/api/subscribe', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email: email,
+      website: hp ? hp.value : '',
+      source: 'home_guide',
+      page_url: location.href
+    })
+  })
+  .then(function(r){ return r.json().catch(function(){ return {}; }); })
+  .then(function(j){
+    if(j && j.ok){
+      try{
+        var s = JSON.parse(localStorage.getItem('coeJourney') || '{}');
+        s.guideDone = true; s.lastStep = 'guide';
+        localStorage.setItem('coeJourney', JSON.stringify(s));
+      }catch(err){}
+      if(window.dataLayer) window.dataLayer.push({event:'guide_lead_submit'});
+      document.getElementById('gform').style.display = 'none';
+      document.getElementById('gdone').style.display = 'block';
+      return;
     }
-  },
-  {
-    eyebrow:"Hear the whole story",
-    headline:"Watch <em>Redemption</em>.",
-    body:["A short film about a brother, the love that outlived him, and the kids it was built to catch. It will ask something of you — to be there for someone the way Izzy's brother saw him. To really see someone for all they are worth, and give them the chance to grow under your love.",
-          "It says all of this better than a page ever could."],
-    cnote:"A note before you begin: the film touches on suicide and loss. If now isn't the time, that's okay.",
-    film:true
-  }
-];
-
-const card = document.getElementById('card');
-const dotsEl = document.getElementById('dots');
-let step = 0;
-
-function toggle(id){ const el=document.getElementById(id); if(el) el.classList.toggle('open'); }
-
-// build dots
-SLIDES.forEach((_,i)=>{ const d=document.createElement('div'); d.className='dot'; dotsEl.appendChild(d); });
-const dots = [...dotsEl.children];
-
-// particles
-const pf = document.getElementById('particles');
-for(let i=0;i<16;i++){
-  const s=2+Math.random()*3, dur=5+Math.random()*6, delay=i*0.8;
-  const el=document.createElement('div'); el.className='p';
-  el.style.cssText=`width:${s}px;height:${s}px;left:${5+(i*5.8)%90}%;animation:rise ${dur}s ease-out ${delay}s infinite;`;
-  pf.appendChild(el);
+    throw new Error('failed');
+  })
+  .catch(function(){
+    btn.disabled = false; btn.textContent = original;
+    if(errEl) errEl.hidden = false;
+  });
+  return false;
 }
-
-function render(){
-  const s = SLIDES[step];
-  const last = step === SLIDES.length-1;
-  let html = '';
-  if(step === 0){
-    html += `<div class="brand"><span class="brand-word">Covenant of Education</span><img class="brand-dove" src="data:image/png;base64,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" alt="Covenant of Education dove" /></div>`;
-  } else {
-    html += `<span class="star">✦</span>`;
-  }
-  html += `<div class="steplabel">${String(step+1).padStart(2,'0')} / ${String(SLIDES.length).padStart(2,'0')}</div>`;
-  if(step === 0){
-    html += `<div class="hashtag">#WeAreEnough</div>`;
-  }
-  if(s.eyebrow) html += `<div class="eyebrow">${s.eyebrow}</div>`;
-  html += `<h2 class="headline">${s.headline}</h2>`;
-  if(s.body){ s.body.forEach(p => html += `<p class="body">${p}</p>`); }
-  if(s.extra){ html += s.extra; }
-  if(s.names){ html += `<div class="names">${s.names.map(n=>`<span class="name-chip">${n}</span>`).join('')}</div>`; }
-  if(s.verse){ html += `<div class="verse"><div class="verse-he" lang="he" dir="rtl">${s.verse.he}</div><div class="verse-en">${s.verse.en}</div><div class="verse-cite">${s.verse.cite}</div></div>`; }
-
-  if(s.film){
-    html += `
-      <div class="film-still"><img src="https://kiver.org/wp-content/uploads/2026/06/movie-thumbnail.png" alt="Redemption film thumbnail" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div class="play"><svg width="24" height="24" viewBox="0 0 24 24"><polygon points="7,4 7,20 20,12" fill="#1A1D26"/></svg></div></div>
-      <p class="cnote">${s.cnote}</p>
-      <form class="optin" id="optin" action="https://buttondown.com/api/emails/embed-subscribe/coe" method="post" target="bd-sink" onsubmit="return submitOptin()">
-        <input type="email" id="email" name="email" placeholder="your@email.com" aria-label="Email" required>
-        <input type="hidden" name="tag" value="sub_tag_5ezyqx67cq9wcvsq2jntyvef05">
-        <button type="submit">Watch Now →</button>
-      </form>
-      <div class="optin-done" id="done"><span class="done-text">✓ Your seat is saved — taking you to the film…</span><a class="optin-link" href="https://coveofedu.as.me/schedule/eecfd762/?categories[]=Movie%20Premiere">Not redirected? Watch Redemption →</a></div>
-      <p class="optin-note">No spam. The film, then a story or two from the movement.</p>
-      <p class="give">Already moved? <a href="https://coveofedu.org/give">Give now</a> — you don't have to wait.</p>`;
-  } else {
-    html += `<div class="nav">`;
-    if(step>0) html += `<button class="back" onclick="go(-1)" aria-label="Back">←</button>`;
-    html += `<button class="next" onclick="go(1)">Next</button></div>`;
-  }
-  card.innerHTML = html;
-  dots.forEach((d,i)=> d.classList.toggle('active', i===step));
-  card.scrollTop = 0;
-}
-
-function go(dir){
-  const t = step+dir;
-  if(t<0 || t>=SLIDES.length) return;
-  card.classList.add('out');
-  setTimeout(()=>{ step=t; render(); card.classList.remove('out'); }, 300);
-}
-
-function submitOptin(){
-  var email=document.getElementById('email').value.trim();
-  if(!email||email.indexOf('@')<1){ document.getElementById('email').focus(); return false; }
-  // Form posts natively into the hidden iframe, registering the subscriber in Buttondown.
-  setTimeout(function(){
-    var f=document.getElementById('optin'); if(f) f.style.display='none';
-    var d=document.getElementById('done'); if(d) d.classList.add('show');
-  }, 30);
-  setTimeout(function(){ window.location.href='https://coveofedu.as.me/schedule/eecfd762/?categories[]=Movie%20Premiere'; }, 1800);
-  return true;
-}
-
-document.addEventListener('keydown', e=>{
-  if(e.key==='ArrowRight' || e.key==='Enter') go(1);
-  if(e.key==='ArrowLeft') go(-1);
-});
-
-render();
 </script>
+<!--
+Drop these one-liners on the other pages (or ship via GTM site-wide) so the
+tracker knows the true last step, not just the last click from home:
+
+/resources:
+<script>try{var j=JSON.parse(localStorage.getItem('coeJourney')||'{}');j.lastStep='resources';localStorage.setItem('coeJourney',JSON.stringify(j))}catch(e){}</script>
+
+/problem:
+<script>try{var j=JSON.parse(localStorage.getItem('coeJourney')||'{}');j.lastStep='problem';localStorage.setItem('coeJourney',JSON.stringify(j))}catch(e){}</script>
+
+Guide thank-you (or /problem opt-in success):
+<script>try{var j=JSON.parse(localStorage.getItem('coeJourney')||'{}');j.guideDone=true;j.lastStep='guide';localStorage.setItem('coeJourney',JSON.stringify(j))}catch(e){}</script>
+-->
 </body>
 </html>
